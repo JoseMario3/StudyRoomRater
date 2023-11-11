@@ -1,0 +1,54 @@
+{
+   "rooms":[
+      {
+         "name":"BSBA Student Lounge",
+         "numChairs":45,
+         "numTables":12
+      },
+      {
+         "name":"Law Cafe",
+         "numChairs":172,
+         "numTables":54
+      },
+      {
+         "name":"Bauer First Floor",
+         "numChairs":181,
+         "numTables":51
+      },
+      {
+         "name":"Wrighton",
+         "numChairs":17,
+         "numTables":4
+      },
+      {
+         "name":"Olin Map Room",
+         "numChairs":49,
+         "numTables":10
+      },
+      {
+         "name":"Hillman",
+         "numChairs":79,
+         "numTables":18
+      },
+      {
+         "name":"McKelvey",
+         "numChairs":33,
+         "numTables":16
+      },
+      {
+         "name":"Whitaker",
+         "numChairs":38,
+         "numTables":16
+      },
+      {
+         "name":"Lopata",
+         "numChairs":113,
+         "numTables":55
+      },
+      {
+         "name":"The Bear's Den",
+         "numChairs":398,
+         "numTables":102
+      }
+   ]
+}
