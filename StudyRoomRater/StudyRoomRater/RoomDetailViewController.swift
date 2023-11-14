@@ -18,6 +18,18 @@ class RoomDetailViewController: UIViewController {
     @IBOutlet weak var tablesLabel: UILabel!
     @IBOutlet weak var outletsLabel: UILabel!
 
+    //just shows number of reviews for each star for now
+    @IBOutlet weak var fiveStarLabel: UILabel!
+    @IBOutlet weak var fourStarLabel: UILabel!
+    @IBOutlet weak var threeStarLabel: UILabel!
+    @IBOutlet weak var twoStarLabel: UILabel!
+    @IBOutlet weak var oneStarLabel: UILabel!
+    
+    @IBOutlet weak var totalReviewsLabel: UILabel!
+    @IBOutlet weak var averageReviewsLabel: UILabel!
+    
+    @IBOutlet weak var showReviewsButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +39,31 @@ class RoomDetailViewController: UIViewController {
             chairsLabel.text = "Chairs: \(room.numberOfChairs)"
             tablesLabel.text = "Tables: \(room.numberOfTables)"
             outletsLabel.text = "Outlets: \(room.numberOfOutlets)"
+            
+            let totalReviews = room.reviews.count
+            if totalReviews > 0 {
+                var totalRating = 0
+                for review in room.reviews {
+                    totalRating += review.rating
+                }
+                let averageReview = (Double(totalRating) / Double(totalReviews))
+                totalReviewsLabel.text = String(totalReviews) + " reviews"
+                averageReviewsLabel.text = String(format: "%.02f", averageReview)
+        
+                oneStarLabel.text = "1 Star: " + String(room.reviews.filter({ $0.rating == 1 }).count)
+                twoStarLabel.text = "2 Star: " + String(room.reviews.filter({ $0.rating == 2 }).count)
+                threeStarLabel.text = "3 Star: " + String(room.reviews.filter({ $0.rating == 3 }).count)
+                fourStarLabel.text = "4 Star: " + String(room.reviews.filter({ $0.rating == 4 }).count)
+                fiveStarLabel.text = "5 Star: " + String(room.reviews.filter({ $0.rating == 5 }).count)
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRoomReviews" {
+            if let destinationVC = segue.destination as? ReviewsViewController {
+                destinationVC.reviewsArray = room!.reviews
+            }
         }
     }
 }
