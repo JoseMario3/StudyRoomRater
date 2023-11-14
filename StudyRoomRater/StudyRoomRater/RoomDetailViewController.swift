@@ -36,9 +36,9 @@ class RoomDetailViewController: UIViewController {
         if let room = room {
             nameLabel.text = room.name
             descriptionLabel.text = room.description
-            chairsLabel.text = "Chairs: \(room.numberOfChairs)"
-            tablesLabel.text = "Tables: \(room.numberOfTables)"
-            outletsLabel.text = "Outlets: \(room.numberOfOutlets)"
+            chairsLabel.text = "Chairs: \(room.numChairs)"
+            tablesLabel.text = "Tables: \(room.numTables)"
+            outletsLabel.text = "Outlets: \(room.numOutlets)"
             
             let totalReviews = room.reviews.count
             if totalReviews > 0 {
