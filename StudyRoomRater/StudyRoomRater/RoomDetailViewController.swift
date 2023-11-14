@@ -44,7 +44,7 @@ class RoomDetailViewController: UIViewController {
             if totalReviews > 0 {
                 var totalRating = 0
                 for review in room.reviews {
-                    totalRating += review.rating
+                    totalRating += Int(review.rating)
                 }
                 let averageReview = (Double(totalRating) / Double(totalReviews))
                 totalReviewsLabel.text = String(totalReviews) + " reviews"

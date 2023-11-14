@@ -46,7 +46,7 @@ var buildings = [
         rooms: [
             StudyRoom(
                 name: "Room 101",
-                description: "s;adfhas;lkdfj;laksd",
+                description: "It's Hillman 101",
                 numberOfChairs: 10,
                 numberOfTables: 4,
                 numberOfOutlets: 6,
@@ -58,7 +58,7 @@ var buildings = [
             ),
             StudyRoom(
                 name: "Room 102",
-                description: "s;adfhas;lkdfj;laksd",
+                description: "It's Hillman 102",
                 numberOfChairs: 10,
                 numberOfTables: 4,
                 numberOfOutlets: 6,

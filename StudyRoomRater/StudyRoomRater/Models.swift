@@ -11,9 +11,9 @@ import MapKit
 struct StudyRoom {
     var name: String
     var description: String
-    var numberOfChairs: Int
-    var numberOfTables: Int
-    var numberOfOutlets: Int
+    var numberOfChairs: Int64
+    var numberOfTables: Int64
+    var numberOfOutlets: Int64
     var reviews: [Review]
 }
 
@@ -24,7 +24,7 @@ struct Building {
 }
 
 struct Review {
-    var rating: Int
+    var rating: Int64
     var comment: String
     var username: String
 }
