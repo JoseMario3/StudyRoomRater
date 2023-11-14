@@ -1,54 +1,82 @@
 {
    "rooms":[
       {
+	
          "name":"BSBA Student Lounge",
          "numChairs":45,
-         "numTables":12
+         "numTables":12,
+	 "latitude":38.6481466010008,
+	 "longitude":-90.31113970659347
       },
       {
          "name":"Law Cafe",
          "numChairs":172,
-         "numTables":54
+         "numTables":54,
+	 "latitude":38.649708470964555,
+	 "longitude":-90.31206966151832
       },
       {
          "name":"Bauer First Floor",
          "numChairs":181,
-         "numTables":51
+         "numTables":51,
+	 "latitude":38.64961722059663,
+	 "longitude":-90.31085660595483
       },
       {
          "name":"Wrighton",
          "numChairs":17,
-         "numTables":4
+         "numTables":4,
+	 "latitude":38.649404337574964,
+	 "longitude":-90.30914393665974
       },
       {
          "name":"Olin Map Room",
          "numChairs":49,
-         "numTables":10
+         "numTables":10,
+	 "latitude":38.648487006627036,
+	 "longitude":-90.30766288508758
       },
       {
          "name":"Hillman",
          "numChairs":79,
-         "numTables":18
+         "numTables":18,
+	 "latitude":38.646951534817234,
+	 "longitude":-90.30477804492584
       },
       {
          "name":"McKelvey",
          "numChairs":33,
-         "numTables":16
+         "numTables":16,
+	 "latitude":38.64824789710751,
+	 "longitude":-90.30159257343941
       },
       {
          "name":"Whitaker",
          "numChairs":38,
-         "numTables":16
+         "numTables":16,
+	 "latitude":38.64912719638861,
+	 "longitude":-90.30310990464798
       },
       {
          "name":"Lopata",
          "numChairs":113,
-         "numTables":55
+         "numTables":55,
+	 "latitude":38.64936079825949,
+	 "longitude":-90.30596571869171
       },
       {
          "name":"The Bear's Den",
          "numChairs":398,
-         "numTables":102
+         "numTables":102,
+	 "latitude":38.64499917414645,
+	 "longitude":-90.31311365469102
+      },
+      {
+         "name":"Risa Commons",
+         "numChairs":200,
+         "numTables":50,
+	 "latitude":38.64466472734742,
+	 "longitude":-90.31336652178165
       }
    ]
 }
