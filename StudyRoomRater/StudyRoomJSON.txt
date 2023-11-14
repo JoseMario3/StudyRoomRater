@@ -73,8 +73,8 @@
       },
       {
          "name":"Risa Commons",
-         "numChairs":200,
-         "numTables":50,
+         "numChairs":208,
+         "numTables":36,
 	 "latitude":38.64466472734742,
 	 "longitude":-90.31336652178165
       }
