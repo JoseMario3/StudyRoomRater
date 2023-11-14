@@ -7,11 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1194C5422AFF371100C702EC /* StudyRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194C5412AFF371100C702EC /* StudyRoomViewController.swift */; };
 		1194C5442AFF3BB700C702EC /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194C5432AFF3BB700C702EC /* ReviewsViewController.swift */; };
-		1194C5462AFF3CA800C702EC /* ReviewViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194C5452AFF3CA800C702EC /* ReviewViewCell.swift */; };
-		1194C5482AFF42EF00C702EC /* StudyRoomSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194C5472AFF42EF00C702EC /* StudyRoomSearchViewController.swift */; };
-		1194C54C2AFF434800C702EC /* StudyRoomSearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194C54B2AFF434800C702EC /* StudyRoomSearchViewCell.swift */; };
 		1194C54E2AFF4A2C00C702EC /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194C54D2AFF4A2C00C702EC /* FiltersViewController.swift */; };
 		A14064622B0308B1005A9EA2 /* StudyRoomsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14064612B0308B1005A9EA2 /* StudyRoomsListViewController.swift */; };
 		A14064642B030A0B005A9EA2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14064632B030A0B005A9EA2 /* Models.swift */; };
@@ -26,11 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1194C5412AFF371100C702EC /* StudyRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRoomViewController.swift; sourceTree = "<group>"; };
 		1194C5432AFF3BB700C702EC /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
-		1194C5452AFF3CA800C702EC /* ReviewViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewCell.swift; sourceTree = "<group>"; };
-		1194C5472AFF42EF00C702EC /* StudyRoomSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRoomSearchViewController.swift; sourceTree = "<group>"; };
-		1194C54B2AFF434800C702EC /* StudyRoomSearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRoomSearchViewCell.swift; sourceTree = "<group>"; };
 		1194C54D2AFF4A2C00C702EC /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		A14064612B0308B1005A9EA2 /* StudyRoomsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRoomsListViewController.swift; sourceTree = "<group>"; };
 		A14064632B030A0B005A9EA2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -77,11 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				1194C54D2AFF4A2C00C702EC /* FiltersViewController.swift */,
-				1194C54B2AFF434800C702EC /* StudyRoomSearchViewCell.swift */,
-				1194C5472AFF42EF00C702EC /* StudyRoomSearchViewController.swift */,
-				1194C5452AFF3CA800C702EC /* ReviewViewCell.swift */,
 				1194C5432AFF3BB700C702EC /* ReviewsViewController.swift */,
-				1194C5412AFF371100C702EC /* StudyRoomViewController.swift */,
 				AD5472C72AFED4AD006385E5 /* AppDelegate.swift */,
 				AD5472C92AFED4AD006385E5 /* SceneDelegate.swift */,
 				AD5472CB2AFED4AD006385E5 /* ViewController.swift */,
@@ -172,15 +160,11 @@
 				AD5472CC2AFED4AD006385E5 /* ViewController.swift in Sources */,
 				1194C5442AFF3BB700C702EC /* ReviewsViewController.swift in Sources */,
 				A14064662B030A32005A9EA2 /* TestData.swift in Sources */,
-				1194C5422AFF371100C702EC /* StudyRoomViewController.swift in Sources */,
 				AD5472C82AFED4AD006385E5 /* AppDelegate.swift in Sources */,
-				1194C5462AFF3CA800C702EC /* ReviewViewCell.swift in Sources */,
 				A140646A2B031C43005A9EA2 /* RoomDetailViewController.swift in Sources */,
 				AD5472CA2AFED4AD006385E5 /* SceneDelegate.swift in Sources */,
-				1194C5482AFF42EF00C702EC /* StudyRoomSearchViewController.swift in Sources */,
 				A14064622B0308B1005A9EA2 /* StudyRoomsListViewController.swift in Sources */,
 				1194C54E2AFF4A2C00C702EC /* FiltersViewController.swift in Sources */,
-				1194C54C2AFF434800C702EC /* StudyRoomSearchViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

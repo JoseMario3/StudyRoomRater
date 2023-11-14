@@ -19,14 +19,24 @@ var buildings = [
                 description: "s;adfhas;lkdfj;laksd",
                 numberOfChairs: 10,
                 numberOfTables: 4,
-                numberOfOutlets: 6
+                numberOfOutlets: 6,
+                reviews: [
+                    Review(rating: 5, comment: "good room", username: "Username1"),
+                    Review(rating: 1, comment: "bad room", username: "username2"),
+                    Review(rating: 3, comment: "mid room", username: "username3")
+                ]
             ),
             StudyRoom(
                 name: "Room 102",
                 description: "s;adfhas;lkdfj;laksd",
                 numberOfChairs: 10,
                 numberOfTables: 4,
-                numberOfOutlets: 6
+                numberOfOutlets: 6,
+                reviews: [
+                    Review(rating: 5, comment: "good room", username: "Username1"),
+                    Review(rating: 1, comment: "bad room", username: "username2"),
+                    Review(rating: 3, comment: "mid room", username: "username3")
+                ]
             ),
         ]
     ),
@@ -39,14 +49,24 @@ var buildings = [
                 description: "s;adfhas;lkdfj;laksd",
                 numberOfChairs: 10,
                 numberOfTables: 4,
-                numberOfOutlets: 6
+                numberOfOutlets: 6,
+                reviews: [
+                    Review(rating: 5, comment: "good room", username: "Username1"),
+                    Review(rating: 1, comment: "bad room", username: "username2"),
+                    Review(rating: 3, comment: "mid room", username: "username3")
+                ]
             ),
             StudyRoom(
                 name: "Room 102",
                 description: "s;adfhas;lkdfj;laksd",
                 numberOfChairs: 10,
                 numberOfTables: 4,
-                numberOfOutlets: 6
+                numberOfOutlets: 6,
+                reviews: [
+                    Review(rating: 5, comment: "good room", username: "Username1"),
+                    Review(rating: 1, comment: "bad room", username: "username2"),
+                    Review(rating: 3, comment: "mid room", username: "username3")
+                ]
             ),
         ]
     ),
@@ -59,14 +79,24 @@ var buildings = [
                 description: "s;adfhas;lkdfj;laksd",
                 numberOfChairs: 10,
                 numberOfTables: 4,
-                numberOfOutlets: 6
+                numberOfOutlets: 6,
+                reviews: [
+                    Review(rating: 5, comment: "good room", username: "Username1"),
+                    Review(rating: 1, comment: "bad room", username: "username2"),
+                    Review(rating: 3, comment: "mid room", username: "username3")
+                ]
             ),
             StudyRoom(
                     name: "Room 102",
                     description: "s;adfhas;lkdfj;laksd",
                     numberOfChairs: 10,
                     numberOfTables: 4,
-                    numberOfOutlets: 6
+                    numberOfOutlets: 6,
+                    reviews: [
+                        Review(rating: 5, comment: "good room", username: "Username1"),
+                        Review(rating: 1, comment: "bad room", username: "username2"),
+                        Review(rating: 3, comment: "mid room", username: "username3")
+                    ]
                 ),          ]
     ),
     Building(
@@ -78,14 +108,24 @@ var buildings = [
                 description: "s;adfhas;lkdfj;laksd",
                 numberOfChairs: 10,
                 numberOfTables: 4,
-                numberOfOutlets: 6
+                numberOfOutlets: 6,
+                reviews: [
+                    Review(rating: 5, comment: "good room", username: "Username1"),
+                    Review(rating: 1, comment: "bad room", username: "username2"),
+                    Review(rating: 3, comment: "mid room", username: "username3")
+                ]
             ),
             StudyRoom(
                 name: "Room 102",
                 description: "s;adfhas;lkdfj;laksd",
                 numberOfChairs: 10,
                 numberOfTables: 4,
-                numberOfOutlets: 6
+                numberOfOutlets: 6,
+                reviews: [
+                    Review(rating: 5, comment: "good room", username: "Username1"),
+                    Review(rating: 1, comment: "bad room", username: "username2"),
+                    Review(rating: 3, comment: "mid room", username: "username3")
+                ]
             ),
         ]
     )
