@@ -11,6 +11,7 @@
 		1194C54E2AFF4A2C00C702EC /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194C54D2AFF4A2C00C702EC /* FiltersViewController.swift */; };
 		3F9D8E4A2B03FC2A0013B2E7 /* SQLiteStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D8E492B03FC2A0013B2E7 /* SQLiteStructure.swift */; };
 		3F9D8E4D2B03FE520013B2E7 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 3F9D8E4C2B03FE520013B2E7 /* SQLite */; };
+		3FE9075B2B042B6300D2A0BA /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9075A2B042B6300D2A0BA /* ListViewController.swift */; };
 		A14064622B0308B1005A9EA2 /* StudyRoomsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14064612B0308B1005A9EA2 /* StudyRoomsListViewController.swift */; };
 		A14064642B030A0B005A9EA2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14064632B030A0B005A9EA2 /* Models.swift */; };
 		A14064662B030A32005A9EA2 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14064652B030A32005A9EA2 /* TestData.swift */; };
@@ -27,6 +28,7 @@
 		1194C5432AFF3BB700C702EC /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
 		1194C54D2AFF4A2C00C702EC /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		3F9D8E492B03FC2A0013B2E7 /* SQLiteStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteStructure.swift; sourceTree = "<group>"; };
+		3FE9075A2B042B6300D2A0BA /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		A14064612B0308B1005A9EA2 /* StudyRoomsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRoomsListViewController.swift; sourceTree = "<group>"; };
 		A14064632B030A0B005A9EA2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A14064652B030A32005A9EA2 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
@@ -80,12 +82,13 @@
 				A14064612B0308B1005A9EA2 /* StudyRoomsListViewController.swift */,
 				A14064692B031C43005A9EA2 /* RoomDetailViewController.swift */,
 				A14064632B030A0B005A9EA2 /* Models.swift */,
-				A14064652B030A32005A9EA2 /* TestData.swift */,
 				AD5472CD2AFED4AD006385E5 /* Main.storyboard */,
 				AD5472D02AFED4AF006385E5 /* Assets.xcassets */,
 				AD5472D22AFED4AF006385E5 /* LaunchScreen.storyboard */,
+				A14064652B030A32005A9EA2 /* TestData.swift */,
 				AD5472D52AFED4AF006385E5 /* Info.plist */,
 				3F9D8E492B03FC2A0013B2E7 /* SQLiteStructure.swift */,
+				3FE9075A2B042B6300D2A0BA /* ListViewController.swift */,
 			);
 			path = StudyRoomRater;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				1194C5442AFF3BB700C702EC /* ReviewsViewController.swift in Sources */,
 				3F9D8E4A2B03FC2A0013B2E7 /* SQLiteStructure.swift in Sources */,
 				A14064662B030A32005A9EA2 /* TestData.swift in Sources */,
+				3FE9075B2B042B6300D2A0BA /* ListViewController.swift in Sources */,
 				AD5472C82AFED4AD006385E5 /* AppDelegate.swift in Sources */,
 				A140646A2B031C43005A9EA2 /* RoomDetailViewController.swift in Sources */,
 				AD5472CA2AFED4AD006385E5 /* SceneDelegate.swift in Sources */,
