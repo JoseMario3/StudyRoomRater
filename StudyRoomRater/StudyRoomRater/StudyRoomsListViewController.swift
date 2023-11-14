@@ -28,7 +28,7 @@ class StudyRoomsListViewController: UIViewController, UITableViewDataSource, UIT
         
         let room = rooms[indexPath.row]
         cell.textLabel?.text = room.name
-        cell.detailTextLabel?.text = "Chairs: \(room.numberOfChairs)"
+        cell.detailTextLabel?.text = "Chairs: \(room.numChairs)"
         
         return cell
     }
