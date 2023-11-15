@@ -7,12 +7,14 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var searchQuery = ""
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchBox: UITextField!
     @IBOutlet var mapView: MKMapView!
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         SQLiteStructure.shared.checkDB()
         buildings = SQLiteStructure.shared.getBuildings()
         configureMap()
+        configureLocationManager()
     }
 
 //    @IBAction func searchLocation(_ sender: Any) {
@@ -41,6 +44,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // Exclude all POI except for our pin points
         mapView.pointOfInterestFilter = .excludingAll
         
+        mapView.showsUserLocation = true
+        
         addCustomPinpoints()
     }
     
@@ -50,6 +55,36 @@ class ViewController: UIViewController, MKMapViewDelegate {
             buildingAnnotation.title = building.name
             buildingAnnotation.coordinate = building.coordinate
             mapView.addAnnotation(buildingAnnotation)
+        }
+    }
+    
+    func configureLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+    }
+
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+            case .authorizedWhenInUse, .authorizedAlways:
+                if CLLocationManager.locationServicesEnabled() {
+                    locationManager.startUpdatingLocation()
+                }
+            case .notDetermined, .restricted, .denied:
+                fatalError("Permission not found")
+                break
+            @unknown default:
+                fatalError("Unhandled authorization status")
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            let region = MKCoordinateRegion(center: location.coordinate, span: span)
+            
+            //overrides the original map view with user location
+            mapView.setRegion(region, animated: true)
         }
     }
     
@@ -69,10 +104,14 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if let buildingName = view.annotation?.title {
-            print("User tapped on location: \(buildingName!)")
-            performSegue(withIdentifier: "showStudyRooms", sender: buildingName)
+        // checks to make sure the annotation isnt the user so a blank pop up doesnt happen
+        if let annotation = view.annotation, !(annotation is MKUserLocation) {
+            if let buildingName = annotation.title {
+                print("User tapped on location: \(buildingName!)")
+                performSegue(withIdentifier: "showStudyRooms", sender: buildingName)
+            }
         }
+        mapView.deselectAnnotation(view.annotation, animated: true)
     }
 
 }
