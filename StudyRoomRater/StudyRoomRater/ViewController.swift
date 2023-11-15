@@ -60,15 +60,13 @@ class ViewController: UIViewController, MKMapViewDelegate {
                let building = buildings.first(where: { $0.name == buildingName }) {
                 destinationVC.rooms = building.rooms
             }
+        } else if segue.identifier == "showAllRooms" {
+            if let destinationVC = segue.destination as?
+                AllRoomsListViewController {
+                destinationVC.buildings = buildings
+            }
         }
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showStudyRooms" {
-//            if let destinationVC = segue.destination as?
-//                ListView
-//        }
-//    }
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let buildingName = view.annotation?.title {

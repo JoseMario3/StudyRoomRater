@@ -11,7 +11,6 @@ import MapKit
 //this is the actual data that will get done by sqlite
 var buildings: [Building] = []
 
-//totally made up the rooms here
 var testbuildings = [
     Building(
         name: "Lopata",

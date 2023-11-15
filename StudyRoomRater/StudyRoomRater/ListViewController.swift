@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AllRoomsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
     
@@ -22,6 +22,16 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return buildings.count
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showStudyRooms" {
+            if let destinationVC = segue.destination as? StudyRoomsListViewController,
+               let buildingName = sender as? String,
+               let building = buildings.first(where: { $0.name == buildingName }) {
+                destinationVC.rooms = building.rooms
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
