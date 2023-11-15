@@ -46,7 +46,6 @@ class SQLiteStructure {
     //just connecting to the db
     private init(){
         print("Singleton")
-        dropDB()
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let dirPath = dir.appendingPathComponent(Self.dbName)
             
@@ -70,7 +69,7 @@ class SQLiteStructure {
         guard let database = db else {return}
         
         do{
-            try database.run(rooms.create { table in
+            try database.run(rooms.create(ifNotExists: true) { table in
                 table.column(roomid, primaryKey: .autoincrement)
                 table.column(rname)
                 table.column(description)
@@ -81,7 +80,7 @@ class SQLiteStructure {
             })
             print("Rooms Table Created")
             
-            try database.run(buildings.create { table in
+            try database.run(buildings.create(ifNotExists: true) { table in
                 table.column(bid, primaryKey: .autoincrement)
                 table.column(bname)
                 table.column(latitude)
@@ -89,7 +88,7 @@ class SQLiteStructure {
             })
             print("Buildings Table Created")
             
-            try database.run(reviews.create { table in
+            try database.run(reviews.create(ifNotExists: true) { table in
                 table.column(revid, primaryKey: .autoincrement)
                 table.column(rating)
                 table.column(comment)
