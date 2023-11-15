@@ -119,6 +119,43 @@ class SQLiteStructure {
         }
     }
     
+    //insert a study room
+    func insertRoom(name: String, desc: String, nC: Int64, nT: Int64, nO: Int64, build: Int64) -> Int64?{
+        guard let database = db else { return nil }
+        
+        let insert = rooms.insert(self.rname<-name,
+                                  self.description<-desc,
+                                  self.numChairs<-nC,
+                                  self.numTables<-nT,
+                                  self.numOutlets<-nO,
+                                  self.building<-build)
+        
+        do{ //the actual insert
+            let rowID = try database.run(insert)
+            return rowID
+        } catch {
+            print ("insert review error: \(error)")
+            return nil
+        }
+    }
+    
+    //insert a building
+    func insertBuilding(name: String, lat: Double, long: Double) -> Int64?{
+        guard let database = db else { return nil }
+        
+        let insert = buildings.insert(self.bname<-name,
+                                      self.latitude<-lat,
+                                      self.longitude<-long)
+        
+        do{ //the actual insert
+            let rowID = try database.run(insert)
+            return rowID
+        } catch {
+            print ("insert review error: \(error)")
+            return nil
+        }
+    }
+    
     //get all the buildings
     func getBuildings() -> [Building]{
         var buildings: [Building] = []
