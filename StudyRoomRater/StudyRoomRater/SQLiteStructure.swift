@@ -2,11 +2,12 @@
 //  SQLiteStructure.swift
 //  StudyRoomRater
 //
-//  Created by McKelvey Student on 11/14/23.
+//  Created by Jefferson Koonce on 11/14/23.
 //
 
 import Foundation
 import SQLite
+import MapKit
 
 class SQLiteStructure {
     static let dbName = "StudyRoomDB"
@@ -19,7 +20,7 @@ class SQLiteStructure {
     private let roomid = Expression<Int64>("id")
     private let rname = Expression<String>("name")
     private let description = Expression<String>("description")
-    private let building = Expression<String>("building")
+    private let building = Expression<Int64>("buildid")
     private let numChairs = Expression<Int64>("numChairs")
     private let numTables = Expression<Int64>("numTables")
     private let numOutlets = Expression<Int64>("numOutlets")
@@ -28,8 +29,8 @@ class SQLiteStructure {
     private let buildings = Table("buildings")
     private let bid = Expression<Int64>("id")
     private let bname = Expression<String>("name")
-    private let longitude = Expression<Float>("longitude")
-    private let latitude = Expression<Float>("latitude")
+    private let longitude = Expression<Double>("longitude")
+    private let latitude = Expression<Double>("latitude")
     
     //table structure for reviews
     private let reviews = Table("reviews")
@@ -116,5 +117,86 @@ class SQLiteStructure {
             print ("insert review error: \(error)")
             return nil
         }
+    }
+    
+    //insert a study room
+    func insertRoom(name: String, desc: String, nC: Int64, nT: Int64, nO: Int64, build: Int64) -> Int64?{
+        guard let database = db else { return nil }
+        
+        let insert = rooms.insert(self.rname<-name,
+                                  self.description<-desc,
+                                  self.numChairs<-nC,
+                                  self.numTables<-nT,
+                                  self.numOutlets<-nO,
+                                  self.building<-build)
+        
+        do{ //the actual insert
+            let rowID = try database.run(insert)
+            return rowID
+        } catch {
+            print ("insert review error: \(error)")
+            return nil
+        }
+    }
+    
+    //insert a building
+    func insertBuilding(name: String, lat: Double, long: Double) -> Int64?{
+        guard let database = db else { return nil }
+        
+        let insert = buildings.insert(self.bname<-name,
+                                      self.latitude<-lat,
+                                      self.longitude<-long)
+        
+        do{ //the actual insert
+            let rowID = try database.run(insert)
+            return rowID
+        } catch {
+            print ("insert review error: \(error)")
+            return nil
+        }
+    }
+    
+    //get all the buildings
+    func getBuildings() -> [Building]{
+        var buildings: [Building] = []
+        guard let database = db else { return [] }
+        
+        do {
+            for b in try database.prepare(self.buildings){
+                buildings.append(Building(name: b[bname], coordinate: CLLocationCoordinate2D(latitude: b[latitude], longitude: b[longitude]), rooms: getRooms(b[bid])))
+            }
+        } catch {print(error)}
+        
+        return buildings
+    }
+    
+    //get the study rooms for a specific building
+    func getRooms(_ buildId: Int64) -> [StudyRoom]{
+        var rooms: [StudyRoom] = []
+        guard let database = db else { return [] }
+        
+        let filter = self.rooms.filter(roomid == buildId)
+        do {
+            for r in try database.prepare(filter){
+                rooms.append(StudyRoom(name: r[rname], description: r[description], numChairs: r[numChairs], numTables: r[numTables], numOutlets: r[numOutlets], reviews: getRevs(r[roomid])))
+            }
+        } catch {print(error)}
+        
+        return rooms
+    }
+    
+    //get the reviews for a study room
+    func getRevs(_ roomId: Int64) -> [Review]{
+        var reviews: [Review] = []
+        guard let database = db else { return [] }
+        
+        let filter = self.rooms.filter(revid == roomId)
+        do {
+            for r in try database.prepare(filter){
+                reviews.append(Review(rating: r[rating], comment: r[comment], username: r[username]))
+            }
+        } catch {print(error)}
+        
+        return reviews
     }
 }
