@@ -46,19 +46,20 @@ class SQLiteStructure {
     //just connecting to the db
     private init(){
         print("Singleton")
+        dropDB()
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let dirPath = dir.appendingPathComponent(Self.dbName)
             
             do {
-                            try FileManager.default.createDirectory(atPath: dirPath.path, withIntermediateDirectories: true, attributes: nil)
-                            let dbPath = dirPath.appendingPathComponent(Self.pathName).path
-                            db = try Connection(dbPath)
-                            createTables()
-                            print("Successful connection at: \(dbPath) ")
-                        } catch {
-                            db = nil
-                            print("init error: \(error)")
-                        }
+                try FileManager.default.createDirectory(atPath: dirPath.path, withIntermediateDirectories: true, attributes: nil)
+                let dbPath = dirPath.appendingPathComponent(Self.pathName).path
+                db = try Connection(dbPath)
+                createTables()
+                print("Successful connection at: \(dbPath) ")
+            } catch {
+                db = nil
+                print("init error: \(error)")
+            }
         } else {
             db = nil
         }
@@ -82,9 +83,9 @@ class SQLiteStructure {
             
             try database.run(buildings.create { table in
                 table.column(bid, primaryKey: .autoincrement)
-                table.column(rname)
-                table.column(description)
-                table.column(numChairs)
+                table.column(bname)
+                table.column(latitude)
+                table.column(longitude)
             })
             print("Buildings Table Created")
             
@@ -175,10 +176,12 @@ class SQLiteStructure {
         var rooms: [StudyRoom] = []
         guard let database = db else { return [] }
         
-        let filter = self.rooms.filter(roomid == buildId)
+        //let filter = self.rooms.filter(roomid == buildId)
         do {
-            for r in try database.prepare(filter){
+            let val = Int.random(in: 1...100)
+            for r in try database.prepare(self.rooms.filter(building == buildId)){
                 rooms.append(StudyRoom(name: r[rname], description: r[description], numChairs: r[numChairs], numTables: r[numTables], numOutlets: r[numOutlets], reviews: getRevs(r[roomid])))
+                print("Room \(r[rname]) is appended to list with random value \(val)")
             }
         } catch {print(error)}
         
@@ -190,13 +193,51 @@ class SQLiteStructure {
         var reviews: [Review] = []
         guard let database = db else { return [] }
         
-        let filter = self.rooms.filter(revid == roomId)
         do {
-            for r in try database.prepare(filter){
+            for r in try database.prepare(self.reviews.filter(forRoom == roomId)){
                 reviews.append(Review(rating: r[rating], comment: r[comment], username: r[username]))
             }
         } catch {print(error)}
         
         return reviews
+    }
+    
+    //check if it exists, or at least has elements
+    func checkDB(){
+        guard let database = db else { return }
+        do{
+            var num = 0
+            for _ in try database.prepare(self.buildings) {num += 1}
+            if(num>0) {return}
+            else {
+                for build in testbuildings{
+                    let id = insertBuilding(name: build.name, lat: build.coordinate.latitude, long: build.coordinate.longitude)
+                    if id != nil { //if there is a building id
+                        for rm in build.rooms { //insert the building's rooms
+                            let rid = insertRoom(name: rm.name, desc: rm.description, nC: rm.numChairs, nT: rm.numTables, nO: rm.numOutlets, build: id!)
+                            if rid != nil { //if there is a room id
+                                for rv in rm.reviews { //insert the room's reviews
+                                    let vid = insertReview(rate: rv.rating, comment: rv.comment, user: rv.username, room: rid!)
+                                    if vid != nil {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } catch {return}
+    }
+    
+    func dropDB(){
+        let fm = FileManager.default
+        do{
+            if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                let dirPath = dir.appendingPathComponent(Self.dbName)
+                try fm.removeItem(at: dirPath)
+            }
+        } catch {
+            print("Drop error")
+        }
     }
 }
