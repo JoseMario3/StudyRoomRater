@@ -12,7 +12,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
     var searchQuery = ""
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchBox: UITextField!
-    
     @IBOutlet var mapView: MKMapView!
 
     override func viewDidLoad() {
@@ -28,7 +27,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
 //        let searchVC = StudyRoomSearchViewController()
 //        navigationController?.pushViewController(searchVC, animated: true)
 //    }
-
 
     func configureMap() {
         //set initial location to WashU
@@ -70,8 +68,4 @@ class ViewController: UIViewController, MKMapViewDelegate {
         }
     }
 
-    
-    
-    
 }
-
