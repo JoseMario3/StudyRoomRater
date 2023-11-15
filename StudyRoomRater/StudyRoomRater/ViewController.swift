@@ -63,12 +63,12 @@ class ViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showStudyRooms" {
-            if let destinationVC = segue.destination as?
-                ListView
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showStudyRooms" {
+//            if let destinationVC = segue.destination as?
+//                ListView
+//        }
+//    }
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let buildingName = view.annotation?.title {

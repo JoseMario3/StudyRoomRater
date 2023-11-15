@@ -20,12 +20,12 @@ class ReviewsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "myCell")
         let review = reviewsArray[indexPath.row]
-        let usernameLabel = UITextView()
+        let usernameLabel = UILabel()
         usernameLabel.frame = CGRect(x: 10, y: 0, width: 100, height: 25)
         usernameLabel.text = review.username
         usernameLabel.textColor = .blue
         cell.contentView.addSubview(usernameLabel)
-        let reviewLabel = UITextView()
+        let reviewLabel = UILabel()
         reviewLabel.frame = CGRect(x: 100, y: 0, width: 1000, height: 50)
         reviewLabel.text = review.comment
         cell.contentView.addSubview(reviewLabel)

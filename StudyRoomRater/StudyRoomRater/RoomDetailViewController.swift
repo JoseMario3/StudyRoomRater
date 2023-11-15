@@ -80,6 +80,7 @@ class RoomDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRoomReviews" {
             if let destinationVC = segue.destination as? ReviewsViewController {
+                print("Performing segue with room: \(room)")
                 destinationVC.reviewsArray = room!.reviews
             }
         }

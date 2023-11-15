@@ -29,8 +29,8 @@ class StudyRoomsListViewController: UIViewController, UITableViewDataSource, UIT
         let room = rooms[indexPath.row]
         //cell.textLabel?.text = room.name
         //cell.detailTextLabel?.text = "Chairs: \(room.numChairs)"
-        let roomLabel = UITextView()
-        roomLabel.frame = CGRect(x: 10, y: 0, width: 100, height: 25)
+        let roomLabel = UILabel()
+        roomLabel.frame = CGRect(x: 10, y: 0, width: 250, height: 25)
         roomLabel.text = room.name
         roomLabel.textColor = .blue
         cell.contentView.addSubview(roomLabel)
@@ -74,7 +74,7 @@ class StudyRoomsListViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedRoom = rooms[indexPath.row]
         print("Performing segue with room: \(selectedRoom)")
-        performSegue(withIdentifier: "showRoomDetails", sender: selectedRoom)
+        //performSegue(withIdentifier: "showRoomDetails", sender: selectedRoom)
     }
 
 
