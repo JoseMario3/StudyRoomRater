@@ -23,6 +23,7 @@ var buildings = [
                 reviews: [
                     Review(rating: 5, comment: "good room", username: "Username1"),
                     Review(rating: 1, comment: "bad room", username: "username2"),
+                    Review(rating: 4, comment: "asnjdfonsadjkflnsjaklgnwerjkalgf newavijowariugoewrnafopewanfiopewnafiopewangiopransfkoepanrfojsapngjor ew fjhewoi fjewioa fjewipo fjewiop fjewio pewj", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
                 ]
             )
@@ -125,6 +126,8 @@ var buildings = [
                 reviews: [
                     Review(rating: 5, comment: "good room", username: "Username1"),
                     Review(rating: 1, comment: "bad room", username: "username2"),
+                    Review(rating: 1, comment: "bad room", username: "username2"),
+                    Review(rating: 1, comment: "bad room", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
                 ]
             ),
@@ -137,6 +140,8 @@ var buildings = [
                 reviews: [
                     Review(rating: 5, comment: "good room", username: "Username1"),
                     Review(rating: 1, comment: "bad room", username: "username2"),
+                    Review(rating: 5, comment: "bad room", username: "username2"),
+                    Review(rating: 5, comment: "bad room", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
                 ]
             ),

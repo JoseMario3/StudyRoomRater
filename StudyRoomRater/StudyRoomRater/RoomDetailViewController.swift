@@ -49,6 +49,20 @@ class RoomDetailViewController: UIViewController {
                 let averageReview = (Double(totalRating) / Double(totalReviews))
                 totalReviewsLabel.text = String(totalReviews) + " reviews"
                 averageReviewsLabel.text = String(format: "%.02f", averageReview)
+                for i in 0..<5 {
+                    let starImageView = UIImageView()
+                    let xpos = i * 20 + 10
+                    starImageView.frame = CGRect(x: xpos, y: 20, width: 20, height: 25)
+                    starImageView.contentMode = .scaleAspectFit
+
+                    if Double(i) < averageReview.rounded() {
+                        starImageView.image = UIImage(systemName: "star.fill")
+                    } else {
+                        starImageView.image = UIImage(systemName: "star")
+                    }
+
+                    
+                }
         
                 oneStarLabel.text = "1 Star: " + String(room.reviews.filter({ $0.rating == 1 }).count)
                 twoStarLabel.text = "2 Star: " + String(room.reviews.filter({ $0.rating == 2 }).count)

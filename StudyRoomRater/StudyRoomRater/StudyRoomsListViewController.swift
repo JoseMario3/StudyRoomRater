@@ -27,9 +27,36 @@ class StudyRoomsListViewController: UIViewController, UITableViewDataSource, UIT
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath)
         
         let room = rooms[indexPath.row]
-        cell.textLabel?.text = room.name
-        cell.detailTextLabel?.text = "Chairs: \(room.numChairs)"
+        //cell.textLabel?.text = room.name
+        //cell.detailTextLabel?.text = "Chairs: \(room.numChairs)"
+        let roomLabel = UITextView()
+        roomLabel.frame = CGRect(x: 10, y: 0, width: 100, height: 25)
+        roomLabel.text = room.name
+        roomLabel.textColor = .blue
+        cell.contentView.addSubview(roomLabel)
         
+        let totalReviews = room.reviews.count
+        if totalReviews > 0 {
+            var totalRating = 0
+            for review in room.reviews {
+                totalRating += Int(review.rating)
+            }
+            let averageReview = (Double(totalRating) / Double(totalReviews))
+            for i in 0..<5 {
+                let starImageView = UIImageView()
+                let xpos = i * 20 + 10
+                starImageView.frame = CGRect(x: xpos, y: 20, width: 20, height: 25)
+                starImageView.contentMode = .scaleAspectFit
+
+                if Double(i) < averageReview.rounded() {
+                    starImageView.image = UIImage(systemName: "star.fill")
+                } else {
+                    starImageView.image = UIImage(systemName: "star")
+                }
+
+                cell.contentView.addSubview(starImageView)
+            }
+        }
         return cell
     }
     
