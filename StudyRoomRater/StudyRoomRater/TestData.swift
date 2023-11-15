@@ -8,8 +8,11 @@
 import Foundation
 import MapKit
 
+//this is the actual data that will get done by sqlite
+var buildings: [Building] = []
+
 //totally made up the rooms here
-var buildings = [
+var testbuildings = [
     Building(
         name: "Lopata",
         coordinate: CLLocationCoordinate2D(latitude: 38.64936079825949, longitude: -90.30596571869171),

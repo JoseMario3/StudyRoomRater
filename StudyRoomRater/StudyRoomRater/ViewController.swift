@@ -18,6 +18,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
+        SQLiteStructure.shared.checkDB()
+        buildings = SQLiteStructure.shared.getBuildings()
         configureMap()
     }
 

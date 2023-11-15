@@ -82,9 +82,9 @@ class SQLiteStructure {
             
             try database.run(buildings.create { table in
                 table.column(bid, primaryKey: .autoincrement)
-                table.column(rname)
-                table.column(description)
-                table.column(numChairs)
+                table.column(bname)
+                table.column(latitude)
+                table.column(longitude)
             })
             print("Buildings Table Created")
             
@@ -198,5 +198,31 @@ class SQLiteStructure {
         } catch {print(error)}
         
         return reviews
+    }
+    
+    //check if it exists, or at least has elements
+    func checkDB(){
+        guard let database = db else { return }
+        do{
+            var num = 0
+            for _ in try database.prepare(self.buildings) {num += 1}
+            if(num>0) {return}
+            else {
+                for build in testbuildings{
+                    let id = insertBuilding(name: build.name, lat: build.coordinate.latitude, long: build.coordinate.longitude)
+                    if id != nil { //if there is a building id
+                        for rm in build.rooms { //insert the building's rooms
+                            let rid = insertRoom(name: rm.name, desc: rm.description, nC: rm.numChairs, nT: rm.numTables, nO: rm.numOutlets, build: id!)
+                            if rid != nil { //if there is a room id
+                                for rv in rm.reviews { //insert the room's reviews
+                                    let vid = insertReview(rate: rv.rating, comment: rv.comment, user: rv.username, room: rid!)
+                                    if vid == nil {print("That's not grand")}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } catch {return}
     }
 }
