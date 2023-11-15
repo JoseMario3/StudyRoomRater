@@ -46,19 +46,20 @@ class SQLiteStructure {
     //just connecting to the db
     private init(){
         print("Singleton")
+        dropDB()
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let dirPath = dir.appendingPathComponent(Self.dbName)
             
             do {
-                            try FileManager.default.createDirectory(atPath: dirPath.path, withIntermediateDirectories: true, attributes: nil)
-                            let dbPath = dirPath.appendingPathComponent(Self.pathName).path
-                            db = try Connection(dbPath)
-                            createTables()
-                            print("Successful connection at: \(dbPath) ")
-                        } catch {
-                            db = nil
-                            print("init error: \(error)")
-                        }
+                try FileManager.default.createDirectory(atPath: dirPath.path, withIntermediateDirectories: true, attributes: nil)
+                let dbPath = dirPath.appendingPathComponent(Self.pathName).path
+                db = try Connection(dbPath)
+                createTables()
+                print("Successful connection at: \(dbPath) ")
+            } catch {
+                db = nil
+                print("init error: \(error)")
+            }
         } else {
             db = nil
         }
@@ -175,10 +176,12 @@ class SQLiteStructure {
         var rooms: [StudyRoom] = []
         guard let database = db else { return [] }
         
-        let filter = self.rooms.filter(roomid == buildId)
+        //let filter = self.rooms.filter(roomid == buildId)
         do {
-            for r in try database.prepare(filter){
+            let val = Int.random(in: 1...100)
+            for r in try database.prepare(self.rooms.filter(building == buildId)){
                 rooms.append(StudyRoom(name: r[rname], description: r[description], numChairs: r[numChairs], numTables: r[numTables], numOutlets: r[numOutlets], reviews: getRevs(r[roomid])))
+                print("Room \(r[rname]) is appended to list with random value \(val)")
             }
         } catch {print(error)}
         
@@ -190,9 +193,8 @@ class SQLiteStructure {
         var reviews: [Review] = []
         guard let database = db else { return [] }
         
-        let filter = self.rooms.filter(revid == roomId)
         do {
-            for r in try database.prepare(filter){
+            for r in try database.prepare(self.reviews.filter(forRoom == roomId)){
                 reviews.append(Review(rating: r[rating], comment: r[comment], username: r[username]))
             }
         } catch {print(error)}
@@ -216,7 +218,8 @@ class SQLiteStructure {
                             if rid != nil { //if there is a room id
                                 for rv in rm.reviews { //insert the room's reviews
                                     let vid = insertReview(rate: rv.rating, comment: rv.comment, user: rv.username, room: rid!)
-                                    if vid == nil {print("That's not grand")}
+                                    if vid != nil {
+                                    }
                                 }
                             }
                         }
@@ -224,5 +227,17 @@ class SQLiteStructure {
                 }
             }
         } catch {return}
+    }
+    
+    func dropDB(){
+        let fm = FileManager.default
+        do{
+            if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                let dirPath = dir.appendingPathComponent(Self.dbName)
+                try fm.removeItem(at: dirPath)
+            }
+        } catch {
+            print("Drop error")
+        }
     }
 }
