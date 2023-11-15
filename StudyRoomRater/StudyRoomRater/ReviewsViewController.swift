@@ -26,7 +26,7 @@ class ReviewsViewController: UIViewController, UITableViewDelegate, UITableViewD
         usernameLabel.textColor = .blue
         cell.contentView.addSubview(usernameLabel)
         let reviewLabel = UILabel()
-        reviewLabel.frame = CGRect(x: 100, y: 0, width: 1000, height: 50)
+        reviewLabel.frame = CGRect(x: 125, y: -5, width: 1000, height: 50)
         reviewLabel.text = review.comment
         cell.contentView.addSubview(reviewLabel)
 
