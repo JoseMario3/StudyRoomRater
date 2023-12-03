@@ -46,12 +46,17 @@ class StudyRoomsListViewController: UIViewController, UITableViewDataSource, UIT
             for i in 0..<5 {
                 let starImageView = UIImageView()
                 let xpos = i * 20 + 10
+                let star = Double(i) + 1
+                let halfStar = Double(i) + 0.5
                 starImageView.frame = CGRect(x: xpos, y: 20, width: 20, height: 25)
                 starImageView.contentMode = .scaleAspectFit
-
-                if Double(i) < averageReview.rounded() {
+                if star <= averageReview {
                     starImageView.image = UIImage(systemName: "star.fill")
-                } else {
+                }
+                else if halfStar <= averageReview {
+                    starImageView.image = UIImage(systemName: "star.lefthalf.fill")
+                }
+                else {
                     starImageView.image = UIImage(systemName: "star")
                 }
 

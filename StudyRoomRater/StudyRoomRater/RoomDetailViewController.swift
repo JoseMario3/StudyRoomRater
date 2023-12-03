@@ -12,19 +12,29 @@ class RoomDetailViewController: UIViewController {
 
     var room: StudyRoom?
 
+    @IBOutlet weak var reviewContainer: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var chairsLabel: UILabel!
     @IBOutlet weak var tablesLabel: UILabel!
     @IBOutlet weak var outletsLabel: UILabel!
 
-    //just shows number of reviews for each star for now
     @IBOutlet weak var fiveStarLabel: UILabel!
+    @IBOutlet weak var fiveStarProgress: UIProgressView!
     @IBOutlet weak var fourStarLabel: UILabel!
+    @IBOutlet weak var fourStarProgress: UIProgressView!
     @IBOutlet weak var threeStarLabel: UILabel!
+    @IBOutlet weak var threeStarProgress: UIProgressView!
     @IBOutlet weak var twoStarLabel: UILabel!
+    @IBOutlet weak var twoStarProgress: UIProgressView!
     @IBOutlet weak var oneStarLabel: UILabel!
+    @IBOutlet weak var oneStarProgress: UIProgressView!
     
+    @IBOutlet weak var oneStarImage: UIImageView!
+    @IBOutlet weak var twoStarImage: UIImageView!
+    @IBOutlet weak var fourStarImage: UIImageView!
+    @IBOutlet weak var threeStarImage: UIImageView!
+    @IBOutlet weak var fiveImage: UIImageView!
     @IBOutlet weak var totalReviewsLabel: UILabel!
     @IBOutlet weak var averageReviewsLabel: UILabel!
     
@@ -39,7 +49,10 @@ class RoomDetailViewController: UIViewController {
             chairsLabel.text = "Chairs: \(room.numChairs)"
             tablesLabel.text = "Tables: \(room.numTables)"
             outletsLabel.text = "Outlets: \(room.numOutlets)"
-            
+            reviewContainer.layer.borderWidth = 1.0
+            reviewContainer.layer.borderColor = UIColor.black.cgColor
+            reviewContainer.layer.cornerRadius = 8.0
+            reviewContainer.layer.masksToBounds = true
             let totalReviews = room.reviews.count
             if totalReviews > 0 {
                 var totalRating = 0
@@ -49,21 +62,47 @@ class RoomDetailViewController: UIViewController {
                 let averageReview = (Double(totalRating) / Double(totalReviews))
                 totalReviewsLabel.text = String(totalReviews) + " reviews"
                 averageReviewsLabel.text = String(format: "%.02f", averageReview)
-                for i in 0..<5 {
-                    let starImageView = UIImageView()
-                    let xpos = i * 20 + 10
-                    starImageView.frame = CGRect(x: xpos, y: 20, width: 20, height: 25)
-                    starImageView.contentMode = .scaleAspectFit
-
-                    if Double(i) < averageReview.rounded() {
-                        starImageView.image = UIImage(systemName: "star.fill")
-                    } else {
-                        starImageView.image = UIImage(systemName: "star")
-                    }
-
-                    
+                if Double(1) <= averageReview {
+                    oneStarImage.image = UIImage(systemName: "star.fill")
                 }
-        
+                else if 0.5 <= averageReview {
+                    oneStarImage.image = UIImage(systemName: "star.lefthalf.fill")
+                }
+                if Double(2) <= averageReview {
+                    twoStarImage.image = UIImage(systemName: "star.fill")
+                }
+                else if 1.5 <= averageReview {
+                    twoStarImage.image = UIImage(systemName: "star.lefthalf.fill")
+                }
+                if Double(3) <= averageReview {
+                    threeStarImage.image = UIImage(systemName: "star.fill")
+                }
+                else if 2.5 <= averageReview {
+                    threeStarImage.image = UIImage(systemName: "star.lefthalf.fill")
+                }
+                if Double(4) <= averageReview {
+                    fourStarImage.image = UIImage(systemName: "star.fill")
+                }
+                else if 3.5 <= averageReview {
+                    fourStarImage.image = UIImage(systemName: "star.lefthalf.fill")
+                }
+                if Double(5) <= averageReview {
+                    fiveImage.image = UIImage(systemName: "star.fill")
+                }
+                else if 4.5 <= averageReview {
+                    fiveImage.image = UIImage(systemName: "star.lefthalf.fill")
+                }
+    
+                let oneStarPercentage: Float = Float(room.reviews.filter({ $0.rating == 1 }).count)/Float(totalReviews)
+                oneStarProgress.progress = oneStarPercentage
+                let twoStarPercentage: Float = Float(room.reviews.filter({ $0.rating == 2 }).count)/Float(totalReviews)
+                twoStarProgress.progress = twoStarPercentage
+                let threeStarPercentage: Float = Float(room.reviews.filter({ $0.rating == 3 }).count)/Float(totalReviews)
+                threeStarProgress.progress = threeStarPercentage
+                let fourStarPercentage: Float = Float(room.reviews.filter({ $0.rating == 4 }).count)/Float(totalReviews)
+                fourStarProgress.progress = fourStarPercentage
+                let fiveStarPercentage: Float = Float(room.reviews.filter({ $0.rating == 5 }).count)/Float(totalReviews)
+                fiveStarProgress.progress = fiveStarPercentage
                 oneStarLabel.text = "1 Star: " + String(room.reviews.filter({ $0.rating == 1 }).count)
                 twoStarLabel.text = "2 Star: " + String(room.reviews.filter({ $0.rating == 2 }).count)
                 threeStarLabel.text = "3 Star: " + String(room.reviews.filter({ $0.rating == 3 }).count)
