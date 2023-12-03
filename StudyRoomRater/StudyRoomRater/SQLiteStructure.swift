@@ -201,6 +201,36 @@ class SQLiteStructure {
         return reviews
     }
     
+    //gets building id from string
+    func getBuilding(_ name: String) -> Int64{
+        var id: Int64 = -1
+        guard let database = db else { return -1 }
+        
+        do {
+            for b in try database.prepare(self.buildings.filter(bname == name)){
+                id = b[roomid]
+            }
+        } catch {print(error)}
+        
+        return id
+        
+    }
+    
+    //gets a room id from a string
+    func getRoomID(_ name: String) -> Int64{
+        var id: Int64 = -1
+        guard let database = db else { return -1 }
+        
+        do {
+            for r in try database.prepare(self.rooms.filter(rname == name)){
+                id = r[roomid]
+            }
+        } catch {print(error)}
+        
+        return id
+        
+    }
+    
     //check if it exists, or at least has elements
     func checkDB(){
         guard let database = db else { return }
