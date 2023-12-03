@@ -93,10 +93,16 @@ class RoomDetailViewController: UIViewController {
                     fiveImage.image = UIImage(systemName: "star.lefthalf.fill")
                 }
     
-                let oneStarPercentage: CGFloat = CGFloat(room.reviews.filter({ $0.rating == 1 }).count)/CGFloat(totalReviews)
-                let fullWidth = oneStarProgress.frame.width
-                let filledWidth = fullWidth * oneStarPercentage
-                oneStarProgress.frame.size.width = filledWidth
+                let oneStarPercentage: Float = Float(room.reviews.filter({ $0.rating == 1 }).count)/Float(totalReviews)
+                oneStarProgress.progress = oneStarPercentage
+                let twoStarPercentage: Float = Float(room.reviews.filter({ $0.rating == 2 }).count)/Float(totalReviews)
+                twoStarProgress.progress = twoStarPercentage
+                let threeStarPercentage: Float = Float(room.reviews.filter({ $0.rating == 3 }).count)/Float(totalReviews)
+                threeStarProgress.progress = threeStarPercentage
+                let fourStarPercentage: Float = Float(room.reviews.filter({ $0.rating == 4 }).count)/Float(totalReviews)
+                fourStarProgress.progress = fourStarPercentage
+                let fiveStarPercentage: Float = Float(room.reviews.filter({ $0.rating == 5 }).count)/Float(totalReviews)
+                fiveStarProgress.progress = fiveStarPercentage
                 oneStarLabel.text = "1 Star: " + String(room.reviews.filter({ $0.rating == 1 }).count)
                 twoStarLabel.text = "2 Star: " + String(room.reviews.filter({ $0.rating == 2 }).count)
                 threeStarLabel.text = "3 Star: " + String(room.reviews.filter({ $0.rating == 3 }).count)
