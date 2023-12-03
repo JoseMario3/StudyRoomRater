@@ -24,6 +24,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         configureMap()
         configureLocationManager()
     }
+    
+    
 
 //    @IBAction func searchLocation(_ sender: Any) {
 //        searchQuery = searchBox.text ?? ""
@@ -94,7 +96,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                let buildingName = sender as? String,
                let building = buildings.first(where: { $0.name == buildingName }) {
                 destinationVC.rooms = building.rooms
+<<<<<<< HEAD
                 destinationVC.building = building.name
+=======
+                destinationVC.buildingname = buildingName
+>>>>>>> origin/insertReviews
             }
         } else if segue.identifier == "showAllRooms" {
             if let destinationVC = segue.destination as?

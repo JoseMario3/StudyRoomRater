@@ -112,6 +112,7 @@ class SQLiteStructure {
         
         do{ //the actual insert
             let rowID = try database.run(insert)
+            print("insert success")
             return rowID
         } catch {
             print ("insert review error: \(error)")

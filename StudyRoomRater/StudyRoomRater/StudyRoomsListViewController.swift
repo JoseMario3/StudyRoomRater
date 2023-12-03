@@ -8,7 +8,7 @@
 import UIKit
 
 class StudyRoomsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    var buildingname = ""
     var rooms: [StudyRoom] = []
     var building: String = ""
 
@@ -71,8 +71,10 @@ class StudyRoomsListViewController: UIViewController, UITableViewDataSource, UIT
            let destinationVC = segue.destination as? RoomDetailViewController,
            let cell = sender as? UITableViewCell,
            let indexPath = tableView.indexPath(for: cell) {
-            let selectedRoom = rooms[indexPath.row]
+            let building = buildings.first(where: { $0.name == buildingname })
+            let selectedRoom = building?.rooms[indexPath.row]
             destinationVC.room = selectedRoom
+            destinationVC.buildingname = buildingname;
         }
         if segue.identifier == "createNewRoom" {
             if let destinationVC = segue.destination as? RoomCreatorViewController {

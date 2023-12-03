@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class RoomDetailViewController: UIViewController {
-
+    var buildingname = ""
     var room: StudyRoom?
 
     @IBOutlet weak var reviewContainer: UIView!
@@ -112,8 +112,15 @@ class RoomDetailViewController: UIViewController {
         }
     }
     
-    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
+    @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
         
+        //this is where the addreview ends, and where we need to update the review counter and update the room/rooms/building
+        let building = buildings.first(where: { $0.name == buildingname })
+        let temproom = building?.rooms.first(where: { $0.name == room?.name })
+        room = temproom
+        viewDidLoad()
+        print("Unwind to Root View Controller")
+        print(room?.name)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -121,6 +128,12 @@ class RoomDetailViewController: UIViewController {
             if let destinationVC = segue.destination as? ReviewsViewController {
                 print("Performing segue with room: \(room)")
                 destinationVC.reviewsArray = room!.reviews
+            }
+        }
+        if segue.identifier == "addRoomReview" {
+            if let destinationVC = segue.destination as? addReviewsViewController {
+                print("Performing segue with room: \(room)")
+                destinationVC.roomname = room!.name
             }
         }
     }
