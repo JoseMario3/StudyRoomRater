@@ -10,6 +10,7 @@ import UIKit
 class StudyRoomsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var rooms: [StudyRoom] = []
+    var building: String = ""
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -68,15 +69,11 @@ class StudyRoomsListViewController: UIViewController, UITableViewDataSource, UIT
             let selectedRoom = rooms[indexPath.row]
             destinationVC.room = selectedRoom
         }
+        if segue.identifier == "createNewRoom" {
+            if let destinationVC = segue.destination as? RoomCreatorViewController {
+                destinationVC.building = building
+            }
+        }
     }
-
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedRoom = rooms[indexPath.row]
-        print("Performing segue with room: \(selectedRoom)")
-        //performSegue(withIdentifier: "showRoomDetails", sender: selectedRoom)
-    }
-
-
 
 }

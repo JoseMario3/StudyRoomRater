@@ -42,9 +42,4 @@ class AllRoomsListViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let selectedBuilding = buildings[indexPath.row].name
-        //performSegue(withIdentifier: "showStudyRooms", sender: selectedBuilding)
-        //print("performing segue \(selectedBuilding)")
-    }
 }
