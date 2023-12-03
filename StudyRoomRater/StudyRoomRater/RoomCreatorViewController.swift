@@ -17,5 +17,4 @@ class RoomCreatorViewController: UIViewController {
         buildingName.text = "Building: \(building)"
     }
     
-    
 }
