@@ -240,8 +240,8 @@ class SQLiteStructure {
             for _ in try database.prepare(self.buildings) {num += 1}
             if(num>13) {return}
             else {
-                dropDB()
-                createTables()
+                //dropDB()
+                //createTables()
                 for build in testbuildings{
                     let id = insertBuilding(name: build.name, lat: build.coordinate.latitude, long: build.coordinate.longitude)
                     if id != nil { //if there is a building id
