@@ -498,51 +498,60 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="83" translatesAutoresizingMaskIntoConstraints="NO" id="x3z-et-W3z">
-                                <rect key="frame" x="59" y="323" width="274" height="28.666666666666686"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="78" translatesAutoresizingMaskIntoConstraints="NO" id="x3z-et-W3z">
+                                <rect key="frame" x="59" y="323" width="274.33333333333331" height="28.666666666666686"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Chairs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROn-7C-Ure">
-                                        <rect key="frame" x="0.0" y="0.0" width="154" height="28.666666666666668"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Chairs:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROn-7C-Ure">
+                                        <rect key="frame" x="0.0" y="0.0" width="159.33333333333334" height="28.666666666666668"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="arj-26-g3T">
-                                        <rect key="frame" x="237" y="0.0" width="37" height="28.666666666666668"/>
+                                        <rect key="frame" x="237.33333333333331" y="0.0" width="37" height="28.666666666666668"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="addChairs" destination="PSA-Ow-tBN" eventType="editingChanged" id="2ze-Xp-ixL"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="UbD-9R-rJ2">
-                                <rect key="frame" x="59" y="396" width="273.66666666666669" height="28.666666666666686"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="77" translatesAutoresizingMaskIntoConstraints="NO" id="UbD-9R-rJ2">
+                                <rect key="frame" x="59" y="396" width="274" height="29"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Tables" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g46-7M-eaz">
-                                        <rect key="frame" x="0.0" y="0.0" width="154.66666666666666" height="28.666666666666668"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Tables:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g46-7M-eaz">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQd-GO-fJh">
-                                        <rect key="frame" x="236.66666666666669" y="0.0" width="37" height="28.666666666666668"/>
+                                        <rect key="frame" x="237" y="0.0" width="37" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="addTables" destination="PSA-Ow-tBN" eventType="editingChanged" id="pNr-u5-nGv"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="Ik1-oU-Lao">
-                                <rect key="frame" x="59" y="474" width="273.66666666666669" height="28.666666666666686"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="Ik1-oU-Lao">
+                                <rect key="frame" x="59" y="474.33333333333331" width="273.66666666666669" height="29"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Outlets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7j-M0-So3">
-                                        <rect key="frame" x="0.0" y="0.0" width="161.66666666666666" height="28.666666666666668"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Outlets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7j-M0-So3">
+                                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O93-fa-QgI">
-                                        <rect key="frame" x="236.66666666666669" y="0.0" width="37" height="28.666666666666668"/>
+                                        <rect key="frame" x="236.66666666666669" y="0.0" width="37" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="addOutlets" destination="PSA-Ow-tBN" eventType="editingChanged" id="dKF-9f-BCf"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -563,9 +572,7 @@
                         <constraints>
                             <constraint firstItem="btb-sb-ELm" firstAttribute="trailing" secondItem="dJ7-HA-Pbx" secondAttribute="trailing" constant="228.66666666666669" id="0Bh-UQ-CxZ"/>
                             <constraint firstItem="btb-sb-ELm" firstAttribute="trailing" secondItem="Vnf-iQ-iuI" secondAttribute="trailing" constant="60" id="0R5-b2-G1b"/>
-                            <constraint firstItem="dJ7-HA-Pbx" firstAttribute="top" secondItem="Ik1-oU-Lao" secondAttribute="bottom" constant="38.333333333333314" id="2Ca-Pq-KrS"/>
                             <constraint firstItem="eLh-gI-tWJ" firstAttribute="top" secondItem="xUj-om-rZE" secondAttribute="bottom" constant="33" id="33U-F8-hBb"/>
-                            <constraint firstItem="btb-sb-ELm" firstAttribute="trailing" secondItem="UbD-9R-rJ2" secondAttribute="trailing" constant="60.333333333333314" id="3p0-uC-wFD"/>
                             <constraint firstItem="x3z-et-W3z" firstAttribute="leading" secondItem="btb-sb-ELm" secondAttribute="leading" constant="59" id="5CI-Yz-bAz"/>
                             <constraint firstItem="UbD-9R-rJ2" firstAttribute="leading" secondItem="btb-sb-ELm" secondAttribute="leading" constant="59" id="6JN-fC-NUF"/>
                             <constraint firstItem="UbD-9R-rJ2" firstAttribute="top" secondItem="x3z-et-W3z" secondAttribute="bottom" constant="44.333333333333314" id="6Kk-yw-pgy"/>
@@ -576,7 +583,6 @@
                             <constraint firstItem="8wN-sO-FYE" firstAttribute="top" secondItem="xUj-om-rZE" secondAttribute="bottom" constant="28" id="HFz-b4-qiW"/>
                             <constraint firstItem="8wN-sO-FYE" firstAttribute="leading" secondItem="eLh-gI-tWJ" secondAttribute="trailing" constant="43" id="KQw-VK-QYf"/>
                             <constraint firstItem="xUj-om-rZE" firstAttribute="top" secondItem="Vnf-iQ-iuI" secondAttribute="bottom" constant="46.666666666666686" id="MSD-Pq-PrO"/>
-                            <constraint firstItem="btb-sb-ELm" firstAttribute="trailing" secondItem="Ik1-oU-Lao" secondAttribute="trailing" constant="60.333333333333314" id="Myi-ut-2gS"/>
                             <constraint firstItem="eLh-gI-tWJ" firstAttribute="leading" secondItem="btb-sb-ELm" secondAttribute="leading" constant="59" id="YYd-eB-GUc"/>
                             <constraint firstItem="Ik1-oU-Lao" firstAttribute="leading" secondItem="btb-sb-ELm" secondAttribute="leading" constant="59" id="aLM-Ka-hRg"/>
                             <constraint firstItem="Ik1-oU-Lao" firstAttribute="top" secondItem="UbD-9R-rJ2" secondAttribute="bottom" constant="49.333333333333314" id="bhF-z9-ugA"/>
@@ -586,7 +592,6 @@
                             <constraint firstItem="btb-sb-ELm" firstAttribute="trailing" secondItem="kSo-No-ifi" secondAttribute="trailing" constant="60" id="m0e-bf-CsS"/>
                             <constraint firstItem="btb-sb-ELm" firstAttribute="trailing" secondItem="8wN-sO-FYE" secondAttribute="trailing" constant="60" id="nLl-ct-me3"/>
                             <constraint firstItem="x3z-et-W3z" firstAttribute="top" secondItem="8wN-sO-FYE" secondAttribute="bottom" constant="39" id="pzh-q3-kWa"/>
-                            <constraint firstItem="btb-sb-ELm" firstAttribute="trailing" secondItem="x3z-et-W3z" secondAttribute="trailing" constant="60" id="rGa-bs-p09"/>
                             <constraint firstItem="96w-El-soh" firstAttribute="leading" secondItem="btb-sb-ELm" secondAttribute="leading" constant="159" id="rca-Eb-M74"/>
                             <constraint firstItem="Vnf-iQ-iuI" firstAttribute="top" secondItem="btb-sb-ELm" secondAttribute="top" constant="17" id="v32-tm-4DD"/>
                             <constraint firstItem="btb-sb-ELm" firstAttribute="trailing" secondItem="96w-El-soh" secondAttribute="trailing" constant="159.33333333333331" id="yBk-Mc-4cB"/>
@@ -597,6 +602,13 @@
                     <navigationItem key="navigationItem" id="CS8-Zi-5yM"/>
                     <connections>
                         <outlet property="buildingName" destination="xUj-om-rZE" id="VO5-dh-OLC"/>
+                        <outlet property="createButton" destination="96w-El-soh" id="YVZ-sZ-6TR"/>
+                        <outlet property="description" destination="kSo-No-ifi" id="l31-BF-gb0"/>
+                        <outlet property="numChairs" destination="arj-26-g3T" id="jw9-DY-hxQ"/>
+                        <outlet property="numOutlets" destination="O93-fa-QgI" id="XTS-7J-k5f"/>
+                        <outlet property="numTables" destination="DQd-GO-fJh" id="W7n-WC-tSG"/>
+                        <outlet property="roomDescription" destination="kSo-No-ifi" id="9aH-pw-geb"/>
+                        <outlet property="roomName" destination="8wN-sO-FYE" id="p8A-iV-l9a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3U-jO-cRZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
