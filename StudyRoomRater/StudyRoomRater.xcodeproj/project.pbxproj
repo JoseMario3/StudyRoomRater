@@ -23,6 +23,7 @@
 		AD5472CF2AFED4AD006385E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5472CD2AFED4AD006385E5 /* Main.storyboard */; };
 		AD5472D12AFED4AF006385E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD5472D02AFED4AF006385E5 /* Assets.xcassets */; };
 		AD5472D42AFED4AF006385E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5472D22AFED4AF006385E5 /* LaunchScreen.storyboard */; };
+		EA9DE6BE2B1BE9B400EBB993 /* addReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9DE6BD2B1BE9B400EBB993 /* addReviewsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		AD5472D02AFED4AF006385E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD5472D32AFED4AF006385E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD5472D52AFED4AF006385E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA9DE6BD2B1BE9B400EBB993 /* addReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addReviewsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			children = (
 				1194C54D2AFF4A2C00C702EC /* FiltersViewController.swift */,
 				1194C5432AFF3BB700C702EC /* ReviewsViewController.swift */,
+				EA9DE6BD2B1BE9B400EBB993 /* addReviewsViewController.swift */,
 				AD5472C72AFED4AD006385E5 /* AppDelegate.swift */,
 				AD5472C92AFED4AD006385E5 /* SceneDelegate.swift */,
 				AD5472CB2AFED4AD006385E5 /* ViewController.swift */,
@@ -184,6 +187,7 @@
 				A140646A2B031C43005A9EA2 /* RoomDetailViewController.swift in Sources */,
 				AD5472CA2AFED4AD006385E5 /* SceneDelegate.swift in Sources */,
 				A14064622B0308B1005A9EA2 /* StudyRoomsListViewController.swift in Sources */,
+				EA9DE6BE2B1BE9B400EBB993 /* addReviewsViewController.swift in Sources */,
 				1194C54E2AFF4A2C00C702EC /* FiltersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
