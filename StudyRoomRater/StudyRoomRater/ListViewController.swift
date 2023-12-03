@@ -27,9 +27,10 @@ class AllRoomsListViewController: UIViewController, UITableViewDelegate, UITable
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showStudyRooms" {
             if let destinationVC = segue.destination as? StudyRoomsListViewController,
-               let buildingName = sender as? String,
-               let building = buildings.first(where: { $0.name == buildingName }) {
-                destinationVC.rooms = building.rooms
+               let cell = sender as? UITableViewCell,
+               let indexPath = table.indexPath(for: cell) {
+                let selectedBuilding = buildings[indexPath.row]
+                destinationVC.rooms = selectedBuilding.rooms
             }
         }
     }
@@ -39,5 +40,11 @@ class AllRoomsListViewController: UIViewController, UITableViewDelegate, UITable
         let building = buildings[indexPath.row]
         cell.textLabel?.text = building.name
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //let selectedBuilding = buildings[indexPath.row].name
+        //performSegue(withIdentifier: "showStudyRooms", sender: selectedBuilding)
+        //print("performing segue \(selectedBuilding)")
     }
 }

@@ -342,7 +342,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="V6Y-EJ-GMj" kind="show" identifier="showStudyRooms" id="sVk-L1-eAZ"/>
+                                            <segue destination="DnE-T5-Gtu" kind="show" identifier="showStudyRooms" id="WpD-ZC-0ff"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -362,7 +362,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sVk-L1-eAZ"/>
+        <segue reference="WpD-ZC-0ff"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
