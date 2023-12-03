@@ -8,7 +8,7 @@
 import Foundation
 import MapKit
 
-struct StudyRoom {
+struct StudySpace {
     var name: String
     var description: String
     var numChairs: Int64
@@ -20,7 +20,7 @@ struct StudyRoom {
 struct Building {
     var name: String
     var coordinate: CLLocationCoordinate2D
-    var rooms: [StudyRoom]
+    var rooms: [StudySpace]
 }
 
 struct Review {

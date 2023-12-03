@@ -172,15 +172,15 @@ class SQLiteStructure {
     }
     
     //get the study rooms for a specific building
-    func getRooms(_ buildId: Int64) -> [StudyRoom]{
-        var rooms: [StudyRoom] = []
+    func getRooms(_ buildId: Int64) -> [StudySpace]{
+        var rooms: [StudySpace] = []
         guard let database = db else { return [] }
         
         //let filter = self.rooms.filter(roomid == buildId)
         do {
             let val = Int.random(in: 1...100)
             for r in try database.prepare(self.rooms.filter(building == buildId)){
-                rooms.append(StudyRoom(name: r[rname], description: r[description], numChairs: r[numChairs], numTables: r[numTables], numOutlets: r[numOutlets], reviews: getRevs(r[roomid])))
+                rooms.append(StudySpace(name: r[rname], description: r[description], numChairs: r[numChairs], numTables: r[numTables], numOutlets: r[numOutlets], reviews: getRevs(r[roomid])))
                 print("Room \(r[rname]) is appended to list with random value \(val)")
             }
         } catch {print(error)}
@@ -238,7 +238,7 @@ class SQLiteStructure {
         do{
             var num = 0
             for _ in try database.prepare(self.buildings) {num += 1}
-            if(num>0) {return}
+            if(num>3) {return}
             else {
                 for build in testbuildings{
                     let id = insertBuilding(name: build.name, lat: build.coordinate.latitude, long: build.coordinate.longitude)

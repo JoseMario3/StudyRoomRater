@@ -10,7 +10,7 @@ import UIKit
 
 class RoomDetailViewController: UIViewController {
     var buildingname = ""
-    var room: StudyRoom?
+    var room: StudySpace?
 
     @IBOutlet weak var reviewContainer: UIView!
     @IBOutlet weak var nameLabel: UILabel!

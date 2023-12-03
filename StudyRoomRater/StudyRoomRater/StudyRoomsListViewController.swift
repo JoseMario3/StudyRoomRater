@@ -9,7 +9,7 @@ import UIKit
 
 class StudyRoomsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var buildingname = ""
-    var rooms: [StudyRoom] = []
+    var rooms: [StudySpace] = []
     var building: String = ""
 
     @IBOutlet weak var tableView: UITableView!
