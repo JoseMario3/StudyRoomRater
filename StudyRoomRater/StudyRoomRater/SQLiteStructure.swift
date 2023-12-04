@@ -210,7 +210,7 @@ class SQLiteStructure {
         do {
             let val = Int.random(in: 1...100)
             for r in try database.prepare(self.rooms.filter(building == buildId)){
-                rooms.append(StudyRoom(name: r[rname], description: r[description], numChairs: r[numChairs], numTables: r[numTables], numOutlets: r[numOutlets], reviews: getRevs(r[roomid]), images: getImages(r[roomid])))
+                rooms.append(StudySpace(name: r[rname], description: r[description], numChairs: r[numChairs], numTables: r[numTables], numOutlets: r[numOutlets], reviews: getRevs(r[roomid]), images: getImages(r[roomid])))
                 print("Room \(r[rname]) is appended to list with random value \(val)")
             }
         } catch {print(error)}
