@@ -16,10 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        //If you dont want the database to clear on start comment this. I did this so that the testData gets called.
-        SQLiteStructure.shared.clearTables()
-        
-        
+        //Uncomment this when there is new data in TestData
+        //SQLiteStructure.shared.clearTables()
         
         return true
     }

@@ -126,6 +126,8 @@ class RoomDetailViewController: UIViewController {
         if let room = room, !room.images.isEmpty {
             let imageString = room.images[currentImageIndex].base64Image
             roomImageView.image = UIImage.fromBase64(imageString)
+        } else {
+            roomImageView.image = UIImage(named: "NoImage")
         }
     }
 
