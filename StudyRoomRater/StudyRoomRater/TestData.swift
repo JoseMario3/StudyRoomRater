@@ -33,9 +33,7 @@ var testbuildings = [
                     Review(rating: 4, comment: "asnjdfonsadjkflnsjaklgnwerjkalgf newavijowariugoewrnafopewanfiopewnafiopewangiopransfkoepanrfojsapngjor ew fjhewoi fjewioa fjewipo fjewiop fjewio pewj", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
                 ],
-                images: [Image(base64Image: convertImageToBase64(imageName: "Stanley1") ?? ""),
-                         Image(base64Image: convertImageToBase64(imageName: "stanley4") ?? ""),
-                         Image(base64Image: convertImageToBase64(imageName: "stanley111") ?? ""),
+                images: [
                         ]
             ),
             StudySpace(
@@ -45,7 +43,7 @@ var testbuildings = [
                 numTables: 7,
                 numOutlets: 22,
                 reviews: [],
-                images: [Image(base64Image: convertImageToBase64(imageName: "lopata215") ?? ""),
+                images: [
                 ]
             ), StudySpace(
                 name: "Math Help Room",
@@ -54,8 +52,7 @@ var testbuildings = [
                 numTables: 7,
                 numOutlets: 13,
                 reviews: [],
-                images: [Image(base64Image: convertImageToBase64(imageName: "helproom1") ?? ""),
-                         Image(base64Image: convertImageToBase64(imageName: "helproom2") ?? ""),
+                images: [
                 ]
             )
         ]
@@ -91,11 +88,7 @@ var testbuildings = [
                numOutlets: 146,
                reviews: [],
                images: [
-                Image(base64Image: convertImageToBase64(imageName: "whispers1") ?? ""),
-                Image(base64Image: convertImageToBase64(imageName: "whispers2-2") ?? ""),
-                Image(base64Image: convertImageToBase64(imageName: "whispers2") ?? ""),
-                Image(base64Image: convertImageToBase64(imageName: "whispers3") ?? ""),
-                Image(base64Image: convertImageToBase64(imageName: "whispers4") ?? ""),
+
                ]
             ),
             
@@ -107,10 +100,7 @@ var testbuildings = [
             numOutlets: 99,
             reviews: [],
             images: [
-                Image(base64Image: convertImageToBase64(imageName: "olinGF1") ?? ""),
-                Image(base64Image: convertImageToBase64(imageName: "OlinGF2") ?? ""),
-                Image(base64Image: convertImageToBase64(imageName: "OlinGF3") ?? ""),
-                Image(base64Image: convertImageToBase64(imageName: "OlinGF4") ?? ""),
+
             ]
            ), StudySpace(
             name: "Ground Floor Study Pods",
@@ -120,9 +110,6 @@ var testbuildings = [
             numOutlets: 154,
             reviews: [],
             images: [
-                Image(base64Image: convertImageToBase64(imageName: "OlinPods1") ?? ""),
-                Image(base64Image: convertImageToBase64(imageName: "olinpods2") ?? ""),
-                Image(base64Image: convertImageToBase64(imageName: "olinpods3") ?? ""),
             ]
            ), StudySpace(
             name: "Ground Floor Printing Area",
@@ -132,8 +119,6 @@ var testbuildings = [
             numOutlets: 36,
             reviews: [],
             images: [
-                Image(base64Image: convertImageToBase64(imageName: "OlinPrint1") ?? ""),
-                Image(base64Image: convertImageToBase64(imageName: "olinprint2") ?? ""),
             ]
            ),
             StudySpace(
@@ -197,8 +182,6 @@ var testbuildings = [
                     Review(rating: 3, comment: "mid room", username: "username3")
                 ],
                 images: [Image(base64Image: convertImageToBase64(imageName: "BD") ?? ""),
-                         Image(base64Image: convertImageToBase64(imageName: "BD2") ?? ""),
-                         Image(base64Image: convertImageToBase64(imageName: "BD3") ?? ""),
                         ]
             ),
             StudySpace(
@@ -256,7 +239,6 @@ var testbuildings = [
                     Review(rating: 3, comment: "mid room", username: "username3")
                 ],
                 images: [
-                    Image(base64Image: convertImageToBase64(imageName: "dainsdining2") ?? ""),
                 ]
             ),
              StudySpace(
@@ -277,7 +259,6 @@ var testbuildings = [
                 numOutlets: 10,
                 reviews: [],
                 images: [
-                    Image(base64Image: convertImageToBase64(imageName: "ducf21") ?? ""),
                     
                 ]
             ), StudySpace(
@@ -299,7 +280,6 @@ var testbuildings = [
                 numOutlets: 24,
                 reviews: [],
                 images: [
-                    Image(base64Image: convertImageToBase64(imageName: "ducbar1") ?? ""),
                     
                 ]
             ), StudySpace(
@@ -310,7 +290,6 @@ var testbuildings = [
                 numOutlets: 24,
                 reviews: [],
                 images: [
-                    Image(base64Image: convertImageToBase64(imageName: "ducchalk1") ?? ""),
                     
                 ]
             ), StudySpace(
@@ -321,7 +300,6 @@ var testbuildings = [
                 numOutlets: 4,
                 reviews: [],
                 images: [
-                    Image(base64Image: convertImageToBase64(imageName: "duccourtyard1") ?? ""),
                     
                 ]
             ), StudySpace(
@@ -332,7 +310,6 @@ var testbuildings = [
                 numOutlets: 0,
                 reviews: [],
                 images: [
-                    Image(base64Image: convertImageToBase64(imageName: "ibbycourt1") ?? ""),
                     
                 ]
             )
