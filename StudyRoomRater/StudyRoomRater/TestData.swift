@@ -240,7 +240,6 @@ var testbuildings = [
                 ],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "tisch3-2") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "tisch3") ?? ""),
                 ]
             ),
             StudySpace(
@@ -258,7 +257,6 @@ var testbuildings = [
                 ],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "dainsdining2") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "dainsdining3") ?? ""),
                 ]
             ),
              StudySpace(
@@ -270,8 +268,6 @@ var testbuildings = [
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "cafeberg2") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "cafeberg3") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "cafeberg5") ?? ""),
                 ]
             ), StudySpace(
                 name: "Floor 2 Seating",
@@ -282,7 +278,7 @@ var testbuildings = [
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "ducf21") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "ducf22") ?? ""),
+                    
                 ]
             ), StudySpace(
                 name: "Goldberg Lounge",
@@ -293,7 +289,7 @@ var testbuildings = [
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "goldberg1") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "goldberg2") ?? ""),
+                    
                 ]
             ), StudySpace(
                 name: "Bar Area",
@@ -304,7 +300,7 @@ var testbuildings = [
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "ducbar1") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "ducbar3") ?? ""),
+                    
                 ]
             ), StudySpace(
                 name: "Chalkboard Room",
@@ -315,7 +311,7 @@ var testbuildings = [
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "ducchalk1") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "ducchalk2") ?? ""),
+                    
                 ]
             ), StudySpace(
                 name: "DUC Courtyard",
@@ -326,8 +322,7 @@ var testbuildings = [
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "duccourtyard1") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "duccourtyard2") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "duccourtyard3") ?? ""),
+                    
                 ]
             ), StudySpace(
                 name: "Ibby's Courtyard",
@@ -338,7 +333,7 @@ var testbuildings = [
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "ibbycourt1") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "ibbycourt2") ?? ""),
+                    
                 ]
             )
         ]
@@ -360,7 +355,7 @@ var testbuildings = [
                 ],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "mckelvey1") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "mckelvey11") ?? ""),
+            
                 ]
             ), StudySpace(
                 name: "Second Floor Study",
@@ -381,7 +376,6 @@ var testbuildings = [
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "mckelvey31") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "mckelvey33") ?? ""),
                 ]
             ),
         ]
@@ -413,7 +407,6 @@ var testbuildings = [
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "resourceroom1") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "resourceroom2") ?? ""),
                 ]
             ),
         ]
@@ -435,9 +428,6 @@ var testbuildings = [
                 ],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "Bauer2") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "Bauer3") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "Bauer4") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "Bauer5") ?? ""),
                 ]
             ),
             StudySpace(
@@ -449,8 +439,6 @@ var testbuildings = [
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "bauercourt1") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "bauercourt2") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "bauercourt3") ?? ""),
                 ]
             ), StudySpace(
                 name: "Room 102",
@@ -624,9 +612,6 @@ var testbuildings = [
                 ],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "lawcafe2") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "lawcafe3") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "lawcafe4") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "lawcafe5") ?? ""),
                 ]
             ),
              StudySpace(
@@ -638,8 +623,6 @@ var testbuildings = [
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "lawcafeback1") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "lawcafeback3") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "lawcafeback6") ?? ""),
                 ]
             ), StudySpace(
                 name: "Room 302A",
@@ -731,8 +714,6 @@ Building(
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "greenseminar1") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "greenseminar2") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "greenseminar4") ?? ""),
                 ]
             ), StudySpace(
                 name: "2nd Floor Center Seating",
@@ -771,7 +752,6 @@ Building(
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "mallybasement1") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "mallybasement2") ?? ""),
                 ]
             ), StudySpace (
                 name: "Second Floor Study",
@@ -782,7 +762,6 @@ Building(
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "mally21") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "mally22") ?? ""),
                 ]
             ), StudySpace (
                 name: "Mallinkrodt Courtyard",
@@ -793,8 +772,6 @@ Building(
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "mallycourt1") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "mallycourt2") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "mallycourt3") ?? ""),
                 ]
             ), StudySpace (
                 name: "Subway Outdoor Seating",
@@ -805,7 +782,6 @@ Building(
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "subwaycourt1") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "subwaycourt3") ?? ""),
                 ]
             ),
         ]
@@ -822,7 +798,6 @@ Building(
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "lifesciencelib1") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "lifesciencelib2") ?? ""),
                 ]
             ), StudySpace (
                 name: "1st Floor Right Wing",
@@ -881,8 +856,6 @@ Building(
                 ],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "BSBA") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "BSBA2") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "BSBA3") ?? ""),
                 ]
             ),
             StudySpace(
@@ -894,8 +867,6 @@ Building(
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "simonbwing") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "simonbwing2") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "simonbwing3") ?? ""),
                 ]
             ),  StudySpace(
                 name: "Simon Courtyard",
@@ -906,7 +877,6 @@ Building(
                 reviews: [],
                 images: [
                     Image(base64Image: convertImageToBase64(imageName: "simoncourt1") ?? ""),
-                    Image(base64Image: convertImageToBase64(imageName: "simoncourt2") ?? ""),
                 ]
             ),
         ]
