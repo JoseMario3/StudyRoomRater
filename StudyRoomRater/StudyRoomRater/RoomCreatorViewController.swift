@@ -27,8 +27,6 @@ class RoomCreatorViewController: UIViewController {
     
     @IBAction func tryCreate(){
         
-        print("we in the car")
-        
         let buildID = SQLiteStructure.shared.getBuildingID(building)
         
         var numC: Int64 = 0
