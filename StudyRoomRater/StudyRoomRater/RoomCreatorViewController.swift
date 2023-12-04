@@ -24,21 +24,21 @@ class RoomCreatorViewController: UIViewController {
         //buildingName.text = "Building: \(building)"
     }
     
-//    @IBAction func addChairs() {
-//        if let input = numChairs.text {
-//            if !isNumeric(input) {
-//                numChairs.text = ""
-//            }
-//        }
-//    }
-//
-//    @IBAction func addTables() {
-//
-//    }
-//
-//    @IBAction func addOutlets() {
-//
-//    }
+    @IBAction func addChairs() {
+        if let input = numChairs.text {
+            if !isNumeric(input) {
+                numChairs.text = ""
+            }
+        }
+    }
+
+    @IBAction func addTables() {
+
+    }
+
+    @IBAction func addOutlets() {
+
+    }
     
     func isNumeric(_ input: String) -> Bool {
         let digits = CharacterSet.decimalDigits

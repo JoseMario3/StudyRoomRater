@@ -88,7 +88,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title="Add Room"/>
                                 <connections>
-                                    <segue destination="PSA-Ow-tBN" kind="show" id="67o-KU-I0h"/>
+                                    <segue destination="PSA-Ow-tBN" kind="show" identifier="createNewRoom" id="67o-KU-I0h"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -671,18 +671,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jz-OW-zeN">
-                                <rect key="frame" x="137.66666666666666" y="210" width="118" height="21"/>
+                                <rect key="frame" x="137.66666666666674" y="238" width="118" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Room Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8wN-sO-FYE">
-                                <rect key="frame" x="99" y="241" width="195" height="34"/>
+                                <rect key="frame" x="99" y="269" width="195" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQd-GO-fJh">
-                                <rect key="frame" x="178" y="411.66666666666669" width="37" height="29"/>
+                                <rect key="frame" x="178" y="439.66666666666652" width="37" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="yfA-SC-0vD"/>
                                 </constraints>
@@ -693,7 +693,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Description Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kSo-No-ifi">
-                                <rect key="frame" x="59" y="573.66666666666663" width="275" height="47.666666666666629"/>
+                                <rect key="frame" x="59" y="601.66666666666652" width="275" height="47.666666666666515"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -707,13 +707,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Chairs:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drU-mR-3PG">
-                                <rect key="frame" x="127" y="296" width="139" height="19"/>
+                                <rect key="frame" x="127" y="324" width="139" height="19"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="arj-26-g3T">
-                                <rect key="frame" x="178" y="325" width="37" height="28.666666666666686"/>
+                                <rect key="frame" x="178" y="353" width="37" height="28.666666666666515"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28.666666666666668" id="JWQ-8g-rCm"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="iKc-hF-fxe"/>
@@ -725,19 +725,19 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Tables:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMG-zu-1hc">
-                                <rect key="frame" x="127.00000000000001" y="374.66666666666669" width="139.33333333333337" height="27"/>
+                                <rect key="frame" x="127" y="402.66666666666652" width="139.33333333333348" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Outlets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wa-tx-DFU">
-                                <rect key="frame" x="123.66666666666669" y="461.66666666666669" width="146" height="21"/>
+                                <rect key="frame" x="123.66666666666674" y="489.66666666666697" width="146" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgN-Wa-DRQ">
-                                <rect key="frame" x="137" y="542.66666666666663" width="127" height="21"/>
+                                <rect key="frame" x="137" y="570.66666666666652" width="127" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
@@ -755,13 +755,19 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O93-fa-QgI">
-                                <rect key="frame" x="179" y="490" width="37" height="29.000000000000057"/>
+                                <rect key="frame" x="179" y="518" width="37" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="addOutlets" destination="PSA-Ow-tBN" eventType="editingChanged" id="dKF-9f-BCf"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZI-KA-RDz">
+                                <rect key="frame" x="124.33333333333333" y="176" width="145.66666666666669" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="btb-sb-ELm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -769,7 +775,9 @@
                             <constraint firstItem="09w-u0-Ail" firstAttribute="top" secondItem="btb-sb-ELm" secondAttribute="top" constant="18" id="0TA-dF-HiF"/>
                             <constraint firstItem="arj-26-g3T" firstAttribute="top" secondItem="drU-mR-3PG" secondAttribute="bottom" constant="10" id="5dY-B3-Rm3"/>
                             <constraint firstItem="O93-fa-QgI" firstAttribute="centerX" secondItem="09w-u0-Ail" secondAttribute="centerX" constant="-3" id="5nC-bw-XXT"/>
+                            <constraint firstItem="TZI-KA-RDz" firstAttribute="centerX" secondItem="09w-u0-Ail" secondAttribute="centerX" constant="-3.3333333333333428" id="75s-mw-fQ0"/>
                             <constraint firstItem="09w-u0-Ail" firstAttribute="leading" secondItem="btb-sb-ELm" secondAttribute="leading" constant="22" id="8dq-0F-TUa"/>
+                            <constraint firstItem="btb-sb-ELm" firstAttribute="trailing" secondItem="TZI-KA-RDz" secondAttribute="trailing" constant="123" id="95t-sF-ITP"/>
                             <constraint firstItem="8wN-sO-FYE" firstAttribute="centerX" secondItem="drU-mR-3PG" secondAttribute="centerX" id="9LM-lG-3Ak"/>
                             <constraint firstItem="kSo-No-ifi" firstAttribute="leading" secondItem="btb-sb-ELm" secondAttribute="leading" constant="59" id="9pp-j7-cnZ"/>
                             <constraint firstItem="DQd-GO-fJh" firstAttribute="top" secondItem="jMG-zu-1hc" secondAttribute="bottom" constant="10" id="AFa-Fv-6gQ"/>
@@ -781,16 +789,17 @@
                             <constraint firstItem="8wN-sO-FYE" firstAttribute="centerX" secondItem="jMG-zu-1hc" secondAttribute="centerX" id="PWE-hG-wzq"/>
                             <constraint firstItem="drU-mR-3PG" firstAttribute="top" secondItem="8wN-sO-FYE" secondAttribute="bottom" constant="21" id="RGZ-p8-wmB"/>
                             <constraint firstItem="kSo-No-ifi" firstAttribute="top" secondItem="XgN-Wa-DRQ" secondAttribute="bottom" constant="10" id="TQU-VU-Csr"/>
-                            <constraint firstItem="arj-26-g3T" firstAttribute="top" secondItem="dVt-HC-Bg1" secondAttribute="top" constant="325" id="Ujc-Qk-pJx"/>
+                            <constraint firstItem="arj-26-g3T" firstAttribute="top" secondItem="dVt-HC-Bg1" secondAttribute="top" constant="353" id="Ujc-Qk-pJx"/>
                             <constraint firstItem="XgN-Wa-DRQ" firstAttribute="centerX" secondItem="09w-u0-Ail" secondAttribute="centerX" id="VSE-cd-g9W"/>
-                            <constraint firstItem="8wN-sO-FYE" firstAttribute="top" secondItem="dVt-HC-Bg1" secondAttribute="top" constant="241" id="XAJ-eo-brF"/>
-                            <constraint firstAttribute="bottom" secondItem="XgN-Wa-DRQ" secondAttribute="bottom" constant="288.33333333333337" id="YWC-xJ-pwo"/>
+                            <constraint firstItem="8wN-sO-FYE" firstAttribute="top" secondItem="dVt-HC-Bg1" secondAttribute="top" constant="269" id="XAJ-eo-brF"/>
+                            <constraint firstAttribute="bottom" secondItem="XgN-Wa-DRQ" secondAttribute="bottom" constant="260.33333333333348" id="YWC-xJ-pwo"/>
                             <constraint firstItem="O93-fa-QgI" firstAttribute="top" secondItem="0wa-tx-DFU" secondAttribute="bottom" constant="7.3333333333333144" id="cqR-P3-6Ud"/>
                             <constraint firstItem="8wN-sO-FYE" firstAttribute="centerX" secondItem="0wa-tx-DFU" secondAttribute="centerX" id="dlr-b1-LHj"/>
+                            <constraint firstItem="TZI-KA-RDz" firstAttribute="top" secondItem="o8F-ri-SlU" secondAttribute="bottom" constant="4" id="hnh-oz-PM7"/>
                             <constraint firstItem="8wN-sO-FYE" firstAttribute="centerX" secondItem="6jz-OW-zeN" secondAttribute="centerX" id="i7F-oX-zjt"/>
                             <constraint firstItem="XgN-Wa-DRQ" firstAttribute="top" secondItem="O93-fa-QgI" secondAttribute="bottom" constant="23.666666666666629" id="ihY-W8-4OQ"/>
                             <constraint firstItem="o8F-ri-SlU" firstAttribute="top" secondItem="09w-u0-Ail" secondAttribute="bottom" constant="5" id="ilv-Bh-VOZ"/>
-                            <constraint firstItem="DQd-GO-fJh" firstAttribute="centerY" secondItem="dVt-HC-Bg1" secondAttribute="centerY" id="lxl-sO-GEF"/>
+                            <constraint firstItem="DQd-GO-fJh" firstAttribute="centerY" secondItem="dVt-HC-Bg1" secondAttribute="centerY" constant="28.166666666666515" id="lxl-sO-GEF"/>
                             <constraint firstItem="btb-sb-ELm" firstAttribute="trailing" secondItem="8wN-sO-FYE" secondAttribute="trailing" constant="99" id="nLl-ct-me3"/>
                             <constraint firstItem="jMG-zu-1hc" firstAttribute="top" secondItem="arj-26-g3T" secondAttribute="bottom" constant="21" id="nfu-kS-edv"/>
                             <constraint firstItem="8wN-sO-FYE" firstAttribute="centerX" secondItem="arj-26-g3T" secondAttribute="centerX" id="p7R-G2-v50"/>
@@ -801,13 +810,13 @@
                             <constraint firstItem="8wN-sO-FYE" firstAttribute="centerX" secondItem="DQd-GO-fJh" secondAttribute="centerX" id="vvR-d3-WUg"/>
                             <constraint firstItem="0wa-tx-DFU" firstAttribute="top" secondItem="DQd-GO-fJh" secondAttribute="bottom" constant="21" id="wil-kM-yAz"/>
                             <constraint firstItem="btb-sb-ELm" firstAttribute="trailing" secondItem="96w-El-soh" secondAttribute="trailing" constant="123" id="yBk-Mc-4cB"/>
-                            <constraint firstItem="96w-El-soh" firstAttribute="top" secondItem="kSo-No-ifi" secondAttribute="bottom" constant="109.66666666666663" id="z5k-qk-gKc"/>
+                            <constraint firstItem="96w-El-soh" firstAttribute="top" secondItem="kSo-No-ifi" secondAttribute="bottom" constant="81.66666666666697" id="z5k-qk-gKc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CS8-Zi-5yM"/>
                     <connections>
+                        <outlet property="buildingName" destination="TZI-KA-RDz" id="Z4r-Mq-ohD"/>
                         <outlet property="createButton" destination="96w-El-soh" id="YVZ-sZ-6TR"/>
-                        <outlet property="description" destination="kSo-No-ifi" id="l31-BF-gb0"/>
                         <outlet property="numChairs" destination="arj-26-g3T" id="jw9-DY-hxQ"/>
                         <outlet property="numOutlets" destination="O93-fa-QgI" id="XTS-7J-k5f"/>
                         <outlet property="numTables" destination="DQd-GO-fJh" id="W7n-WC-tSG"/>
