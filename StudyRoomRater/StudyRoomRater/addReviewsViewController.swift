@@ -19,6 +19,13 @@ class addReviewsViewController: UIViewController{
         Username.text = ""
         Comment.text = ""
         Score.selectedSegmentIndex = 4;
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+           view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @IBAction func addReview(_ sender: Any) {
@@ -28,4 +35,5 @@ class addReviewsViewController: UIViewController{
         buildings = SQLiteStructure.shared.getBuildings()
         
     }
+    
 }

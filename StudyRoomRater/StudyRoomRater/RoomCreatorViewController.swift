@@ -25,6 +25,10 @@ class RoomCreatorViewController: UIViewController {
         buildingName.text = building
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func tryCreate(){
         
         let buildID = SQLiteStructure.shared.getBuildingID(building)
