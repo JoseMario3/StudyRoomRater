@@ -32,8 +32,7 @@ var testbuildings = [
                     Review(rating: 1, comment: "bad room", username: "username2"),
                     Review(rating: 4, comment: "asnjdfonsadjkflnsjaklgnwerjkalgf newavijowariugoewrnafopewanfiopewnafiopewangiopransfkoepanrfojsapngjor ew fjhewoi fjewioa fjewipo fjewiop fjewio pewj", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
-                ]
-        
+                ],
                 images: []
             ),
             StudySpace(
@@ -84,28 +83,34 @@ var testbuildings = [
                numChairs: 132,
                numTables: 57,
                numOutlets: 146,
-               reviews: []
-           ), StudySpace(
+               reviews: [],
+               images: []
+            ),
+            
+            StudySpace(
             name: "Ground Floor",
             description: "",
             numChairs: 144,
             numTables: 44,
             numOutlets: 99,
-            reviews: []
+            reviews: [],
+            images: []
            ), StudySpace(
             name: "Ground Floor Study Pods",
             description: "Every study pods has a chair, table, and two outlets",
             numChairs: 77,
             numTables: 77,
             numOutlets: 154,
-            reviews: []
+            reviews: [],
+            images: []
            ), StudySpace(
             name: "Ground Floor Printing Area",
             description: "Every study pod in the printing area has a chair, table, and one outlets",
             numChairs: 36,
             numTables: 36,
             numOutlets: 36,
-            reviews: []
+            reviews: [],
+            images: []
            ),
             StudySpace(
                 name: "Map Room",
@@ -612,28 +617,32 @@ Building(
                     Review(rating: 5, comment: "good room", username: "Username1"),
                     Review(rating: 1, comment: "bad room", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
-                ]
+                ],
+                images: []
             ), StudySpace(
                 name: "Green Seminar Room 111",
                 description: "",
                 numChairs: 27,
                 numTables: 14,
                 numOutlets: 18,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "2nd Floor Center Seating",
                 description: "",
                 numChairs: 8,
                 numTables: 7,
                 numOutlets: 8,
-                reviews: []
+                reviews: [],
+                images: []
             ),  StudySpace(
                 name: "3rd Floor Center Seating",
                 description: "",
                 numChairs: 8,
                 numTables: 3,
                 numOutlets: 8,
-                reviews: []
+                reviews: [],
+                images: []
             ),
         ]
     ), 
