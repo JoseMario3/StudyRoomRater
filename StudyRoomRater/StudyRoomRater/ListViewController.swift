@@ -31,6 +31,7 @@ class AllRoomsListViewController: UIViewController, UITableViewDelegate, UITable
                let indexPath = table.indexPath(for: cell) {
                 let selectedBuilding = buildings[indexPath.row]
                 destinationVC.rooms = selectedBuilding.rooms
+                destinationVC.buildingname = selectedBuilding.name
             }
         }
     }

@@ -22,7 +22,7 @@ class RoomCreatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buildingName.text = "Building: \(building)"
+        buildingName.text = building
     }
     
     @IBAction func tryCreate(){
