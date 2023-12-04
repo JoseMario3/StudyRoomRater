@@ -18,27 +18,57 @@ class RoomCreatorViewController: UIViewController {
     @IBOutlet weak var numOutlets: UITextField!
     @IBOutlet weak var roomDescription: UITextField!
     @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //buildingName.text = "Building: \(building)"
+        buildingName.text = "Building: \(building)"
     }
     
-//    @IBAction func addChairs() {
-//        if let input = numChairs.text {
-//            if !isNumeric(input) {
-//                numChairs.text = ""
-//            }
-//        }
-//    }
-//
-//    @IBAction func addTables() {
-//
-//    }
-//
-//    @IBAction func addOutlets() {
-//
-//    }
+    @IBAction func tryCreate(){
+        
+        let buildID = SQLiteStructure.shared.getBuildingID(building)
+        
+        var numC: Int64 = 0
+        var numT: Int64 = 0
+        var numO: Int64 = 0
+        
+        if isNumeric(numChairs.text ?? "not a number") {
+            numC = Int64((numChairs.text! as NSString).integerValue)
+            errorLabel.text = ""
+        } else {
+            errorLabel.text = "Number of Chairs not Number Value"
+            return
+        }
+        if isNumeric(numTables.text ?? "not a number") {
+            numT = Int64((numOutlets.text! as NSString).integerValue)
+            errorLabel.text = ""
+        } else {
+            errorLabel.text = "Number of Tables not Number Value"
+            return
+        }
+        if isNumeric(numOutlets.text ?? "not a number") {
+            numO = Int64((numOutlets.text! as NSString).integerValue)
+            errorLabel.text = ""
+        } else {
+            errorLabel.text = "Number of Outlets not Number Value"
+            return
+        }
+        
+        //everything should be good now
+        let tryRoom = SQLiteStructure.shared.insertRoom(name: roomName.text!, desc: roomDescription.text!, nC: numC, nT: numT, nO: numO, build: buildID)
+        
+        
+        
+        if(tryRoom != nil) {
+            print("Room has id \(tryRoom) for building with id \(buildID)")
+            //navigationController?.popViewController(animated: true)
+        } else {
+            errorLabel.text = "Something went wrong and we don't know what"
+            return
+        }
+        
+    }
     
     func isNumeric(_ input: String) -> Bool {
         let digits = CharacterSet.decimalDigits
