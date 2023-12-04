@@ -59,10 +59,10 @@ class RoomDetailViewController: UIViewController {
             chairsLabel.text = "Chairs: \(room.numChairs)"
             tablesLabel.text = "Tables: \(room.numTables)"
             outletsLabel.text = "Outlets: \(room.numOutlets)"
-            reviewContainer.layer.borderWidth = 1.0
-            reviewContainer.layer.borderColor = UIColor.black.cgColor
-            reviewContainer.layer.cornerRadius = 8.0
-            reviewContainer.layer.masksToBounds = true
+//            reviewContainer.layer.borderWidth = 1.0
+//            reviewContainer.layer.borderColor = UIColor.black.cgColor
+//            reviewContainer.layer.cornerRadius = 8.0
+//            reviewContainer.layer.masksToBounds = true
             let totalReviews = room.reviews.count
             if totalReviews > 0 {
                 var totalRating = 0
