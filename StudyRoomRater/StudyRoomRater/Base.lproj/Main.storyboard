@@ -116,25 +116,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tv6-QQ-lGF">
-                                <rect key="frame" x="20" y="458.66666666666674" width="353" height="20.333333333333258"/>
+                                <rect key="frame" x="20" y="458.66666666666669" width="353" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGe-UF-n4T">
-                                <rect key="frame" x="20" y="489" width="353" height="20.333333333333485"/>
+                                <rect key="frame" x="20" y="489" width="353" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1c-vU-uJ6">
-                                <rect key="frame" x="20" y="519.33333333333348" width="353" height="20.333333333333485"/>
+                                <rect key="frame" x="20" y="519.33333333333337" width="353" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dq-iP-fqW">
-                                <rect key="frame" x="20" y="549.66666666666652" width="353" height="20.333333333333485"/>
+                                <rect key="frame" x="20" y="549.66666666666663" width="353" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -632,6 +632,9 @@
                                 <rect key="frame" x="159" y="750" width="74.666666666666686" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create"/>
+                                <connections>
+                                    <action selector="tryCreate" destination="PSA-Ow-tBN" eventType="touchUpInside" id="Qie-qW-eUh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUj-om-rZE">
                                 <rect key="frame" x="59.000000000000007" y="198" width="75.666666666666686" height="24"/>
@@ -663,9 +666,6 @@
                                         <rect key="frame" x="237.33333333333331" y="0.0" width="37" height="28.666666666666668"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="addChairs" destination="PSA-Ow-tBN" eventType="editingChanged" id="2ze-Xp-ixL"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -682,9 +682,6 @@
                                         <rect key="frame" x="237" y="0.0" width="37" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="addTables" destination="PSA-Ow-tBN" eventType="editingChanged" id="pNr-u5-nGv"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -701,9 +698,6 @@
                                         <rect key="frame" x="236.66666666666669" y="0.0" width="37" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="addOutlets" destination="PSA-Ow-tBN" eventType="editingChanged" id="dKF-9f-BCf"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -718,6 +712,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hl-JY-glv">
+                                <rect key="frame" x="87" y="667" width="218" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="btb-sb-ELm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -755,7 +756,7 @@
                     <connections>
                         <outlet property="buildingName" destination="xUj-om-rZE" id="VO5-dh-OLC"/>
                         <outlet property="createButton" destination="96w-El-soh" id="YVZ-sZ-6TR"/>
-                        <outlet property="description" destination="kSo-No-ifi" id="l31-BF-gb0"/>
+                        <outlet property="errorLabel" destination="5Hl-JY-glv" id="VSV-Vu-2fg"/>
                         <outlet property="numChairs" destination="arj-26-g3T" id="jw9-DY-hxQ"/>
                         <outlet property="numOutlets" destination="O93-fa-QgI" id="XTS-7J-k5f"/>
                         <outlet property="numTables" destination="DQd-GO-fJh" id="W7n-WC-tSG"/>
@@ -765,7 +766,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3U-jO-cRZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2388.5496183206105" y="2067.605633802817"/>
+            <point key="canvasLocation" x="2418" y="2067"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

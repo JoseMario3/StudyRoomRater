@@ -78,7 +78,7 @@ class StudyRoomsListViewController: UIViewController, UITableViewDataSource, UIT
         }
         if segue.identifier == "createNewRoom" {
             if let destinationVC = segue.destination as? RoomCreatorViewController {
-                destinationVC.building = building
+                destinationVC.building = buildingname
             }
         }
     }

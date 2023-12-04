@@ -250,7 +250,8 @@ class SQLiteStructure {
 
     
     //gets building id from string
-    func getBuilding(_ name: String) -> Int64{
+    func getBuildingID(_ name: String) -> Int64{
+        print("Getting building with name \(name)")
         var id: Int64 = -1
         guard let database = db else { return -1 }
         
