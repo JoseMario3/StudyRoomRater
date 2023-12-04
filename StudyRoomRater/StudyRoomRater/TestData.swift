@@ -459,7 +459,7 @@ var testbuildings = [
                 numTables: 1,
                 numOutlets: 9,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8915") ?? "")]
             ), StudySpace(
                 name: "Room 129",
                 description: "",
@@ -467,7 +467,7 @@ var testbuildings = [
                 numTables: 1,
                 numOutlets: 15,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8916") ?? "")]
             ), StudySpace(
                 name: "Room 151",
                 description: "",
@@ -475,7 +475,7 @@ var testbuildings = [
                 numTables: 1,
                 numOutlets: 9,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8909") ?? "")]
             ), StudySpace(
                 name: "Room 152",
                 description: "",
@@ -483,7 +483,7 @@ var testbuildings = [
                 numTables: 1,
                 numOutlets: 9,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8910") ?? "")]
             ), StudySpace(
                 name: "Room 153",
                 description: "",
@@ -491,7 +491,7 @@ var testbuildings = [
                 numTables: 1,
                 numOutlets: 9,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8909") ?? "")]
             ), StudySpace(
                 name: "Room 185",
                 description: "",
@@ -499,7 +499,7 @@ var testbuildings = [
                 numTables: 2,
                 numOutlets: 20,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8911") ?? "")]
             ), StudySpace(
                 name: "Room 191",
                 description: "",
@@ -507,7 +507,7 @@ var testbuildings = [
                 numTables: 1,
                 numOutlets: 10,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8913") ?? "")]
             ), StudySpace(
                 name: "Room 192",
                 description: "",
@@ -515,7 +515,7 @@ var testbuildings = [
                 numTables: 1,
                 numOutlets: 10,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8912") ?? "")]
             ), StudySpace(
                 name: "Room 193",
                 description: "",
@@ -523,7 +523,7 @@ var testbuildings = [
                 numTables: 2,
                 numOutlets: 18,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8914") ?? "")]
             ), StudySpace(
                 name: "Room 202",
                 description: "",
@@ -531,7 +531,7 @@ var testbuildings = [
                 numTables: 1,
                 numOutlets: 9,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8901") ?? "")]
             ), StudySpace(
                 name: "Room 212",
                 description: "",
@@ -539,7 +539,7 @@ var testbuildings = [
                 numTables: 1,
                 numOutlets: 9,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8901") ?? "")]
             ), StudySpace(
                 name: "Room 223",
                 description: "",
@@ -547,7 +547,7 @@ var testbuildings = [
                 numTables: 1,
                 numOutlets: 18,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8903") ?? "")]
             ), StudySpace(
                 name: "Room 235",
                 description: "",
@@ -555,7 +555,7 @@ var testbuildings = [
                 numTables: 1,
                 numOutlets: 9,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8907") ?? "")]
             ), StudySpace(
                 name: "Room 239",
                 description: "",
@@ -563,7 +563,7 @@ var testbuildings = [
                 numTables: 1,
                 numOutlets: 9,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8907") ?? "")]
             ),  StudySpace(
                 name: "Room 241",
                 description: "",
@@ -571,7 +571,7 @@ var testbuildings = [
                 numTables: 1,
                 numOutlets: 15,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8902") ?? "")]
             ), StudySpace(
                 name: "Room 242",
                 description: "",
@@ -579,7 +579,7 @@ var testbuildings = [
                 numTables: 1,
                 numOutlets: 8,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8906") ?? "")]
             ), StudySpace(
                 name: "Room 291",
                 description: "",
@@ -587,7 +587,7 @@ var testbuildings = [
                 numTables: 2,
                 numOutlets: 18,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8905") ?? "")]
             ), StudySpace(
                 name: "Room 292",
                 description: "",
@@ -595,7 +595,7 @@ var testbuildings = [
                 numTables: 2,
                 numOutlets: 18,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8904") ?? "")]
             ), StudySpace(
                 name: "Room 293",
                 description: "",
@@ -603,7 +603,7 @@ var testbuildings = [
                 numTables: 2,
                 numOutlets: 18,
                 reviews: [],
-                images: []
+                images: [Image(base64Image: convertImageToBase64(imageName: "IMG_8904") ?? "")]
             ),
         ]
     ),
