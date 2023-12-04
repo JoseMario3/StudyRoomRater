@@ -82,5 +82,4 @@ class StudyRoomsListViewController: UIViewController, UITableViewDataSource, UIT
             }
         }
     }
-
 }

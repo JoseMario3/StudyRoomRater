@@ -8,6 +8,11 @@
 import Foundation
 import MapKit
 
+func convertImageToBase64(imageName: String) -> String? {
+    guard let image = UIImage(named: imageName), let imageData = image.pngData() else { return nil }
+    return imageData.base64EncodedString()
+}
+
 //this is the actual data that will get done by sqlite
 var buildings: [Building] = []
 
@@ -28,20 +33,25 @@ var testbuildings = [
                     Review(rating: 4, comment: "asnjdfonsadjkflnsjaklgnwerjkalgf newavijowariugoewrnafopewanfiopewnafiopewangiopransfkoepanrfojsapngjor ew fjhewoi fjewioa fjewipo fjewiop fjewio pewj", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
                 ]
-            ), StudySpace(
+        
+                images: []
+            ),
+            StudySpace(
                 name: "Room 215",
                 description: "",
                 numChairs: 15,
                 numTables: 7,
                 numOutlets: 22,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Math Help Room",
                 description: "Math TA's usually host office hours here",
                 numChairs: 14,
                 numTables: 7,
                 numOutlets: 13,
-                reviews: []
+                reviews: [],
+                images: []
             )
         ]
     ),
@@ -59,7 +69,8 @@ var testbuildings = [
                     Review(rating: 5, comment: "good room", username: "Username1"),
                     Review(rating: 1, comment: "bad room", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
-                ]
+                ],
+                images: []
             )
         ]
     ),
@@ -106,7 +117,8 @@ var testbuildings = [
                     Review(rating: 5, comment: "good room", username: "Username1"),
                     Review(rating: 1, comment: "bad room", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
-                ]
+                ],
+                images: []
             )
         ]
     ),
@@ -124,14 +136,17 @@ var testbuildings = [
                     Review(rating: 5, comment: "good room", username: "Username1"),
                     Review(rating: 1, comment: "bad room", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
-                ]
-            ), StudySpace(
+                ],
+                images: []
+            ),
+            StudySpace(
                 name: "Room 316",
                 description: "Where the Magic Happens",
                 numChairs: 34,
                 numTables: 20,
                 numOutlets: 60,
-                reviews: []
+                reviews: [],
+                images: []
             ),
         ]
     ),
@@ -149,7 +164,8 @@ var testbuildings = [
                     Review(rating: 5, comment: "good room", username: "Username1"),
                     Review(rating: 1, comment: "bad room", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
-                ]
+                ],
+                images: []
             ),
             StudySpace(
                 name: "Risa Commons",
@@ -160,7 +176,13 @@ var testbuildings = [
                 reviews: [
                     Review(rating: 5, comment: "good room", username: "Username1"),
                     Review(rating: 1, comment: "bad room", username: "username2"),
-                    Review(rating: 3, comment: "mid room", username: "username3")
+                    Review(rating: 3, comment: "mid room", username: "username3249875239048572345")
+                ],
+                images: [Image(base64Image: convertImageToBase64(imageName: "Risa1") ?? ""),
+                         Image(base64Image: convertImageToBase64(imageName: "Risa2") ?? ""),
+                         Image(base64Image: convertImageToBase64(imageName: "Risa3") ?? ""),
+                         Image(base64Image: convertImageToBase64(imageName: "Risa4") ?? ""),
+                         Image(base64Image: convertImageToBase64(imageName: "Risa5") ?? ""),
                 ]
             ),
         ]
@@ -181,7 +203,8 @@ var testbuildings = [
                     Review(rating: 1, comment: "bad room", username: "username2"),
                     Review(rating: 1, comment: "bad room", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
-                ]
+                ],
+                images: []
             ),
             StudySpace(
                 name: "Dain's Dining Hall",
@@ -195,56 +218,65 @@ var testbuildings = [
                     Review(rating: 5, comment: "bad room", username: "username2"),
                     Review(rating: 5, comment: "bad room", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
-                ]
-            ), StudySpace(
+                ],
+                images: []
+            ),
+             StudySpace(
                 name: "Cafe Bergson",
                 description: "",
                 numChairs: 40,
                 numTables: 10,
                 numOutlets: 18,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Floor 2 Seating",
                 description: "",
                 numChairs: 31,
                 numTables: 16,
                 numOutlets: 10,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Goldberg Lounge",
                 description: "",
                 numChairs: 26,
                 numTables: 8,
                 numOutlets: 8,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Bar Area",
                 description: "",
                 numChairs: 31,
                 numTables: 10,
                 numOutlets: 24,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Chalkboard Room",
                 description: "",
                 numChairs: 31,
                 numTables: 10,
                 numOutlets: 24,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "DUC Courtyard",
                 description: "",
                 numChairs: 87,
                 numTables: 20,
                 numOutlets: 4,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Ibby's Courtyard",
                 description: "",
                 numChairs: 41,
                 numTables: 20,
                 numOutlets: 0,
-                reviews: []
+                reviews: [],
+                images: []
             )
         ]
     ),
@@ -262,21 +294,24 @@ var testbuildings = [
                     Review(rating: 5, comment: "good room", username: "Username1"),
                     Review(rating: 1, comment: "bad room", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
-                ]
+                ],
+                images: []
             ), StudySpace(
                 name: "Second Floor Study",
                 description: "",
                 numChairs: 23,
                 numTables: 10,
                 numOutlets: 14,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Third Floor Study",
                 description: "",
                 numChairs: 15,
                 numTables: 7,
                 numOutlets: 8,
-                reviews: []
+                reviews: [],
+                images: []
             ),
         ]
     ),
@@ -294,14 +329,16 @@ var testbuildings = [
                     Review(rating: 5, comment: "good room", username: "Username1"),
                     Review(rating: 1, comment: "bad room", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
-                ]
+                ],
+                images: []
             ), StudySpace(
                 name: "Student Resource Room",
                 description: "",
                 numChairs: 58,
                 numTables: 20,
                 numOutlets: 20,
-                reviews: []
+                reviews: [],
+                images: []
             ),
         ]
     ),
@@ -319,147 +356,169 @@ var testbuildings = [
                     Review(rating: 5, comment: "good room", username: "Username1"),
                     Review(rating: 1, comment: "bad room", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
-                ]
-            ),  StudySpace(
+                ],
+                images: []
+            ),
+            StudySpace(
                 name: "Bauer Courtyard",
                 description: "",
                 numChairs: 45,
                 numTables: 16,
                 numOutlets: 4,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 102",
                 description: "",
                 numChairs: 4,
                 numTables: 1,
                 numOutlets: 9,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 129",
                 description: "",
                 numChairs: 5,
                 numTables: 1,
                 numOutlets: 15,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 151",
                 description: "",
                 numChairs: 5,
                 numTables: 1,
                 numOutlets: 9,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 152",
                 description: "",
                 numChairs: 3,
                 numTables: 1,
                 numOutlets: 9,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 153",
                 description: "",
                 numChairs: 5,
                 numTables: 1,
                 numOutlets: 9,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 185",
                 description: "",
                 numChairs: 9,
                 numTables: 2,
                 numOutlets: 20,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 191",
                 description: "",
                 numChairs: 5,
                 numTables: 1,
                 numOutlets: 10,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 192",
                 description: "",
                 numChairs: 5,
                 numTables: 1,
                 numOutlets: 10,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 193",
                 description: "",
                 numChairs: 8,
                 numTables: 2,
                 numOutlets: 18,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 202",
                 description: "",
                 numChairs: 5,
                 numTables: 1,
                 numOutlets: 9,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 212",
                 description: "",
                 numChairs: 5,
                 numTables: 1,
                 numOutlets: 9,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 223",
                 description: "",
                 numChairs: 6,
                 numTables: 1,
                 numOutlets: 18,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 235",
                 description: "",
                 numChairs: 6,
                 numTables: 1,
                 numOutlets: 9,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 239",
                 description: "",
                 numChairs: 6,
                 numTables: 1,
                 numOutlets: 9,
-                reviews: []
+                reviews: [],
+                images: []
             ),  StudySpace(
                 name: "Room 241",
                 description: "",
                 numChairs: 6,
                 numTables: 1,
                 numOutlets: 15,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 242",
                 description: "",
                 numChairs: 5,
                 numTables: 1,
                 numOutlets: 8,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 291",
                 description: "",
                 numChairs: 10,
                 numTables: 2,
                 numOutlets: 18,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 292",
                 description: "",
                 numChairs: 9,
                 numTables: 2,
                 numOutlets: 18,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 293",
                 description: "",
                 numChairs: 9,
                 numTables: 2,
                 numOutlets: 18,
-                reviews: []
+                reviews: [],
+                images: []
             ),
         ]
     ),
@@ -477,91 +536,69 @@ var testbuildings = [
                     Review(rating: 5, comment: "good room", username: "Username1"),
                     Review(rating: 1, comment: "bad room", username: "username2"),
                     Review(rating: 3, comment: "mid room", username: "username3")
-                ]
-            ),  StudySpace(
+                ],
+                images: []
+            ),
+             StudySpace(
                 name: "Law Cafe (Back Area)",
                 description: "",
                 numChairs: 53,
                 numTables: 14,
                 numOutlets: 50,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 302A",
                 description: "",
                 numChairs: 4,
                 numTables: 1,
                 numOutlets: 6,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 302B",
                 description: "",
                 numChairs: 4,
                 numTables: 1,
                 numOutlets: 6,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 302C",
                 description: "",
                 numChairs: 4,
                 numTables: 1,
                 numOutlets: 6,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 302D",
                 description: "",
                 numChairs: 4,
                 numTables: 1,
                 numOutlets: 6,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 302E",
                 description: "",
                 numChairs: 4,
                 numTables: 1,
                 numOutlets: 6,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace(
                 name: "Room 302F",
                 description: "",
                 numChairs: 4,
                 numTables: 1,
                 numOutlets: 6,
-                reviews: []
+                reviews: [],
+                images: []
             ),
         ]
     ),
-    Building(
-        name: "Simon",
-        coordinate: CLLocationCoordinate2D(latitude: 38.6481466010008, longitude: -90.31113970659347),
-        rooms: [
-            StudySpace(
-                name: "BSBA Student Lounge",
-                description: "It's a lounge for students",
-                numChairs: 45,
-                numTables: 12,
-                numOutlets: 17,
-                reviews: [
-                    Review(rating: 5, comment: "good room", username: "Username1"),
-                    Review(rating: 1, comment: "bad room", username: "username2"),
-                    Review(rating: 3, comment: "mid room", username: "username3")
-                ]
-            ), StudySpace(
-                name: "Basement Left Wing",
-                description: "",
-                numChairs: 13,
-                numTables: 6,
-                numOutlets: 15,
-                reviews: []
-            ),  StudySpace(
-                name: "Simon Courtyard",
-                description: "",
-                numChairs: 41,
-                numTables: 11,
-                numOutlets: 0,
-                reviews: []
-            ),
-        ]
-    ), Building(
+Building(
         name: "Seigle",
         coordinate: CLLocationCoordinate2D(latitude: 38.64893233715199, longitude: -90.31255586071605),
         rooms: [
@@ -599,7 +636,9 @@ var testbuildings = [
                 reviews: []
             ),
         ]
-    ), Building (
+    ), 
+    
+    Building (
         name: "Mallinckrodt",
         coordinate: CLLocationCoordinate2D(latitude: 38.647426281412976, longitude: -90.30971676072923),
         rooms: [
@@ -609,28 +648,32 @@ var testbuildings = [
                 numChairs: 32,
                 numTables: 14,
                 numOutlets: 8,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace (
                 name: "Second Floor Study",
                 description: "",
                 numChairs: 24,
                 numTables: 7,
                 numOutlets: 15,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace (
                 name: "Mallinkrodt Courtyard",
                 description: "",
                 numChairs: 35,
                 numTables: 36,
                 numOutlets: 0,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace (
                 name: "Subway Outdoor Seating",
                 description: "",
                 numChairs: 44,
                 numTables: 12,
                 numOutlets: 6,
-                reviews: []
+                reviews: [],
+                images: []
             ),
         ]
     ), Building (
@@ -643,21 +686,24 @@ var testbuildings = [
                 numChairs: 29,
                 numTables: 10,
                 numOutlets: 15,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace (
                 name: "1st Floor Right Wing",
                 description: "",
                 numChairs: 9,
                 numTables: 3,
                 numOutlets: 0,
-                reviews: []
+                reviews: [],
+                images: []
             ), StudySpace (
                 name: "2nd Floor Right Wing",
                 description: "",
                 numChairs: 6,
                 numTables: 3,
                 numOutlets: 0,
-                reviews: []
+                reviews: [],
+                images: []
             ),
         ]
     ), Building (
@@ -670,7 +716,45 @@ var testbuildings = [
                 numChairs: 22,
                 numTables: 10,
                 numOutlets: 4,
-                reviews: []
+                reviews: [],
+                images: []
+            ),
+        ]
+    ),
+
+    Building(
+        name: "Simon",
+        coordinate: CLLocationCoordinate2D(latitude: 38.6481466010008, longitude: -90.31113970659347),
+        rooms: [
+            StudySpace(
+                name: "BSBA Student Lounge",
+                description: "It's a lounge for students",
+                numChairs: 45,
+                numTables: 12,
+                numOutlets: 17,
+                reviews: [
+                    Review(rating: 5, comment: "good room", username: "Username1"),
+                    Review(rating: 1, comment: "bad room", username: "username2"),
+                    Review(rating: 3, comment: "mid room", username: "username3")
+                ],
+                images: []
+            ),
+            StudySpace(
+                name: "Basement Left Wing",
+                description: "",
+                numChairs: 13,
+                numTables: 6,
+                numOutlets: 15,
+                reviews: [],
+                images: []
+            ),  StudySpace(
+                name: "Simon Courtyard",
+                description: "",
+                numChairs: 41,
+                numTables: 11,
+                numOutlets: 0,
+                reviews: [],
+                images: []
             ),
         ]
     )

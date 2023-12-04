@@ -40,9 +40,19 @@ class RoomDetailViewController: UIViewController {
     
     @IBOutlet weak var showReviewsButton: UIButton!
     
+    @IBOutlet weak var roomImageView: UIImageView!
+
+    // Image navigation
+    private var currentImageIndex = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupRoomDetails()
+        updateImageView()
+    }
 
+
+    private func setupRoomDetails() {
         if let room = room {
             nameLabel.text = room.name
             descriptionLabel.text = room.description
@@ -111,24 +121,59 @@ class RoomDetailViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
-        
-        //this is where the addreview ends, and where we need to update the review counter and update the room/rooms/building
-        let building = buildings.first(where: { $0.name == buildingname })
-        let temproom = building?.rooms.first(where: { $0.name == room?.name })
-        room = temproom
-        viewDidLoad()
-        print("Unwind to Root View Controller")
-        print(room?.name)
+
+    private func updateImageView() {
+        if let room = room, !room.images.isEmpty {
+            let imageString = room.images[currentImageIndex].base64Image
+            roomImageView.image = UIImage.fromBase64(imageString)
+        }
+    }
+
+    @IBAction func previousImage(_ sender: UIButton) {
+        if let room = room, !room.images.isEmpty {
+            currentImageIndex = (currentImageIndex - 1 + room.images.count) % room.images.count
+            updateImageView()
+        }
+    }
+
+    @IBAction func nextImage(_ sender: UIButton) {
+        if let room = room, !room.images.isEmpty {
+            currentImageIndex = (currentImageIndex + 1) % room.images.count
+            updateImageView()
+        }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showRoomReviews" {
-            if let destinationVC = segue.destination as? ReviewsViewController {
-                print("Performing segue with room: \(room)")
-                destinationVC.reviewsArray = room!.reviews
+    @IBAction func uploadImageButtonTapped(_ sender: UIButton) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
+
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                imagePickerController.sourceType = .camera
+                self.present(imagePickerController, animated: true, completion: nil)
+            } else {
+                print("Camera not available")
             }
+        }))
+
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
+            imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
+
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRoomReviews",
+           let destinationVC = segue.destination as? ReviewsViewController,
+           let room = room {
+            destinationVC.reviewsArray = room.reviews
         }
         if segue.identifier == "addRoomReview" {
             if let destinationVC = segue.destination as? addReviewsViewController {
@@ -138,3 +183,40 @@ class RoomDetailViewController: UIViewController {
         }
     }
 }
+
+extension UIImage {
+    static func fromBase64(_ base64String: String) -> UIImage? {
+        guard let imageData = Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) else {
+            return nil
+        }
+        return UIImage(data: imageData)
+    }
+}
+
+extension RoomDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let room = room, let selectedImage = info[.originalImage] as? UIImage else {
+            picker.dismiss(animated: true, completion: nil)
+            return
+        }
+
+        let base64String = convertImageToBase64String(img: selectedImage)
+
+        if let _ = SQLiteStructure.shared.insertImage(base64Image: base64String, room: SQLiteStructure.shared.getRoomID(room.name)) {
+            
+            //need to update ui to see newi mage (not sure if uploading is even working though)
+            
+        } else {
+            
+            //handle errrors
+            
+        }
+
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    private func convertImageToBase64String(img: UIImage) -> String {
+        return img.jpegData(compressionQuality: 1.0)?.base64EncodedString() ?? ""
+    }
+}
+

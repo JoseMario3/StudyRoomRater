@@ -15,6 +15,7 @@ struct StudySpace {
     var numTables: Int64
     var numOutlets: Int64
     var reviews: [Review]
+    var images: [Image] 
 }
 
 struct Building {
@@ -27,4 +28,8 @@ struct Review {
     var rating: Int64
     var comment: String
     var username: String
+}
+
+struct Image {
+    var base64Image: String
 }

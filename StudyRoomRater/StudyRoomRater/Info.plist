@@ -6,6 +6,10 @@
 	<string>We use location data to help users reach their desired study location.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We use location data to help users reach their desired study location.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We use the photo library to upload images of study rooms.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We use camera function to upload images of study rooms.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

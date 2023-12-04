@@ -40,6 +40,13 @@ class SQLiteStructure {
     private let username = Expression<String>("user")
     private let forRoom = Expression<Int64>("roomid")
     
+    //table structure for room images
+    private let images = Table("images")
+    private let imageId = Expression<Int64>("id")
+    private let base64Image = Expression<String>("base64_image")
+    private let associatedRoomId = Expression<Int64>("room_id")
+      
+    
     static let shared = SQLiteStructure()
     private var db: Connection? = nil
     
@@ -96,8 +103,54 @@ class SQLiteStructure {
                 table.column(forRoom)
             })
             print("Reviews Table Created")
+            
+            try database.run(images.create(ifNotExists: true) { table in
+                table.column(imageId, primaryKey: .autoincrement)
+                table.column(base64Image)
+                table.column(associatedRoomId)
+            })
+            print("Room Images Table Created")
         } catch {
             print("table error: \(error)")
+        }
+    }
+
+
+    
+    //insert a building
+    func insertBuilding(name: String, lat: Double, long: Double) -> Int64?{
+        guard let database = db else { return nil }
+        
+        let insert = buildings.insert(self.bname<-name,
+                                      self.latitude<-lat,
+                                      self.longitude<-long)
+        
+        do{ //the actual insert
+            let rowID = try database.run(insert)
+            return rowID
+        } catch {
+            print ("insert review error: \(error)")
+            return nil
+        }
+    }
+    
+    //insert a study room
+    func insertRoom(name: String, desc: String, nC: Int64, nT: Int64, nO: Int64, build: Int64) -> Int64? {
+        guard let database = db else { return nil }
+        
+        let insert = rooms.insert(self.rname <- name,
+                                  self.description <- desc,
+                                  self.numChairs <- nC,
+                                  self.numTables <- nT,
+                                  self.numOutlets <- nO,
+                                  self.building <- build)
+
+        do {
+            let roomID = try database.run(insert)
+            return roomID
+        } catch {
+            print("Insert room error: \(error)")
+            return nil
         }
     }
     
@@ -120,39 +173,16 @@ class SQLiteStructure {
         }
     }
     
-    //insert a study room
-    func insertRoom(name: String, desc: String, nC: Int64, nT: Int64, nO: Int64, build: Int64) -> Int64?{
+    func insertImage(base64Image: String, room: Int64) -> Int64?{
         guard let database = db else { return nil }
         
-        let insert = rooms.insert(self.rname<-name,
-                                  self.description<-desc,
-                                  self.numChairs<-nC,
-                                  self.numTables<-nT,
-                                  self.numOutlets<-nO,
-                                  self.building<-build)
+        let insert = images.insert(self.base64Image<-base64Image, self.associatedRoomId<-room)
         
         do{ //the actual insert
             let rowID = try database.run(insert)
             return rowID
         } catch {
-            print ("insert review error: \(error)")
-            return nil
-        }
-    }
-    
-    //insert a building
-    func insertBuilding(name: String, lat: Double, long: Double) -> Int64?{
-        guard let database = db else { return nil }
-        
-        let insert = buildings.insert(self.bname<-name,
-                                      self.latitude<-lat,
-                                      self.longitude<-long)
-        
-        do{ //the actual insert
-            let rowID = try database.run(insert)
-            return rowID
-        } catch {
-            print ("insert review error: \(error)")
+            print ("insert image error: \(error)")
             return nil
         }
     }
@@ -180,7 +210,7 @@ class SQLiteStructure {
         do {
             let val = Int.random(in: 1...100)
             for r in try database.prepare(self.rooms.filter(building == buildId)){
-                rooms.append(StudySpace(name: r[rname], description: r[description], numChairs: r[numChairs], numTables: r[numTables], numOutlets: r[numOutlets], reviews: getRevs(r[roomid])))
+                rooms.append(StudyRoom(name: r[rname], description: r[description], numChairs: r[numChairs], numTables: r[numTables], numOutlets: r[numOutlets], reviews: getRevs(r[roomid]), images: getImages(r[roomid])))
                 print("Room \(r[rname]) is appended to list with random value \(val)")
             }
         } catch {print(error)}
@@ -201,6 +231,23 @@ class SQLiteStructure {
         
         return reviews
     }
+    
+    // get images for a room
+    func getImages(_ roomId: Int64) -> [Image] {
+        var images: [Image] = []
+        guard let database = db else { return [] }
+
+        
+        do {
+            for i in try database.prepare(self.images.filter(associatedRoomId == roomId)){
+                images.append(Image(base64Image: i[base64Image]))
+            }
+        } catch {print(error)}
+
+        return images
+    }
+
+
     
     //gets building id from string
     func getBuilding(_ name: String) -> Int64{
@@ -235,31 +282,35 @@ class SQLiteStructure {
     //check if it exists, or at least has elements
     func checkDB(){
         guard let database = db else { return }
-        do{
+        do {
+            // Check if the buildings table already has data
             var num = 0
-            for _ in try database.prepare(self.buildings) {num += 1}
-            if(num>13) {return}
+            for _ in try database.prepare(self.buildings) { num += 1 }
+            if(num > 0) { return }
             else {
-                //dropDB()
-                //createTables()
-                for build in testbuildings{
+                 //Populate the database with initial data from `testbuildings`
+                for build in testbuildings {
                     let id = insertBuilding(name: build.name, lat: build.coordinate.latitude, long: build.coordinate.longitude)
-                    if id != nil { //if there is a building id
-                        for rm in build.rooms { //insert the building's rooms
-                            let rid = insertRoom(name: rm.name, desc: rm.description, nC: rm.numChairs, nT: rm.numTables, nO: rm.numOutlets, build: id!)
-                            if rid != nil { //if there is a room id
-                                for rv in rm.reviews { //insert the room's reviews
-                                    let vid = insertReview(rate: rv.rating, comment: rv.comment, user: rv.username, room: rid!)
-                                    if vid != nil {
-                                    }
+                    if let id = id {
+                        for rm in build.rooms {
+                            let rid = insertRoom(name: rm.name, desc: rm.description, nC: rm.numChairs, nT: rm.numTables, nO: rm.numOutlets, build: id)
+                            if let rid = rid { // if there is a room id
+                                for rv in rm.reviews { // insert the room's reviews
+                                    _ = insertReview(rate: rv.rating, comment: rv.comment, user: rv.username, room: rid)
+                                }
+                                for im in rm.images {
+                                    _ = insertImage(base64Image: im.base64Image, room: rid)
                                 }
                             }
                         }
                     }
                 }
             }
-        } catch {return}
+        } catch {
+            print("Database check error: \(error)")
+        }
     }
+
     
     func dropDB(){
         let fm = FileManager.default
@@ -272,4 +323,21 @@ class SQLiteStructure {
             print("Drop error")
         }
     }
+    
+    func clearTables() {
+        guard let database = db else { return }
+
+        do {
+            try database.run(rooms.delete())
+            try database.run(buildings.delete())
+            try database.run(reviews.delete())
+            try database.run(images.delete())
+            print("All tables cleared")
+        } catch {
+            print("Error clearing tables: \(error)")
+        }
+    }
+
 }
+
+

@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Risa1.jpg",
+      "filename" : "Risa3.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Risa2.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Risa3.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

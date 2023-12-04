@@ -14,6 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        //If you dont want the database to clear on start comment this. I did this so that the testData gets called.
+        SQLiteStructure.shared.clearTables()
+        
+        
+        
         return true
     }
 
@@ -30,6 +37,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+//        let fileManager = FileManager.default
+//        let documentsUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+//        let databasePath = documentsUrl.appendingPathComponent("StudyRoomDB/study.sqlite3").path
+//
+//        if fileManager.fileExists(atPath: databasePath) {
+//            do {
+//                try fileManager.removeItem(atPath: databasePath)
+//                print("Database Deleted")
+//            } catch {
+//                print("Could not delete database: \(error)")
+//            }
+//        } else {
+//            print("Database file does not exist")
+//        }
+    }
+
 
 
 }
