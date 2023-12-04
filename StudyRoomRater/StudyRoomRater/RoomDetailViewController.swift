@@ -169,6 +169,16 @@ class RoomDetailViewController: UIViewController {
 
         self.present(actionSheet, animated: true, completion: nil)
     }
+    
+    private func fetchUpdatedImagesForRoom() {
+        guard let room = room else { return }
+
+        let updatedImages = SQLiteStructure.shared.getImages(SQLiteStructure.shared.getRoomID(room.name))
+        self.room?.images = updatedImages
+
+        updateImageView()
+    }
+
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -203,10 +213,12 @@ extension RoomDetailViewController: UIImagePickerControllerDelegate, UINavigatio
         }
 
         let base64String = convertImageToBase64String(img: selectedImage)
+        
+//        print("base64string: ", base64String)
 
         if let _ = SQLiteStructure.shared.insertImage(base64Image: base64String, room: SQLiteStructure.shared.getRoomID(room.name)) {
             
-            //need to update ui to see newi mage (not sure if uploading is even working though)
+            fetchUpdatedImagesForRoom()
             
         } else {
             
