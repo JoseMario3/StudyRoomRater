@@ -62,6 +62,17 @@ class StudyRoomsListViewController: UIViewController, UITableViewDataSource, UIT
 
                 cell.contentView.addSubview(starImageView)
             }
+            
+        }
+        else {
+            for i in 0..<5 {
+                let starImageView = UIImageView()
+                let xpos = i * 20 + 10
+                starImageView.frame = CGRect(x: xpos, y: 20, width: 20, height: 25)
+                starImageView.contentMode = .scaleAspectFit
+                    starImageView.image = UIImage(systemName: "star")
+                cell.contentView.addSubview(starImageView)
+            }
         }
         return cell
     }
